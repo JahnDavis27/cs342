@@ -1,3 +1,4 @@
-1) a. Data can be identified as ìknown facts that can be recorded and have implicit meaningî. A database is simply a collection of related data. A database management system is a computerized system that allows a user to create and maintain a database. 
+1) a. Data can be identified as ‚Äúknown facts that can be recorded and have implicit meaning‚Äù. A database is simply a collection of related data. A database management system is a computerized system that allows a user to create and maintain a database. 
     b. Database systems has various unique qualities that distinguish them from the traditional file system    as well as data structures and algorithms. While traditional file systems require various users to define and implement various files needed for a specific program, database systems are structured so that a single repository of information that is defined only once and allows multiple users to access that data repeatedly in a variety of ways. 
     c. Database administrators/designers, end users, software engineers, tool developers, DBMS system designers and implementers
+ 
