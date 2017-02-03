@@ -21,7 +21,7 @@ ORDER BY first_name;
 --1e
 SELECT city, state_province, country_name FROM locations, countries, regions 
 WHERE regions.region_name = 'Asia' AND countries.region_id = regions.region_id 
-AND locations.country_id = countries.country_id;
+AND locations.country_id = countries.country_id; 
 
 --1f
 SELECT * FROM locations WHERE state_province IS NULL;
