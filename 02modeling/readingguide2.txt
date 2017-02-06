@@ -1,0 +1,24 @@
+1) A. The relational data model was first defined by E.F. Codd in 1970, during his time working for IBM. The model was a massive step forward for the computing world, and quickly became a standard for databases. 
+
+Terms
+I. relation – a set of n-tuples
+ii. attribute – the name of a role played by some domain in the relation schema of a database
+iii. domain – the set of all unique values permitted for an attribute 
+iv. n-tuple - an ordered list of n values where each value is an element of the domain or a special NULL value.
+v. NULL value - special marker used in Structured Query Language (SQL) to indicate that a data value does not exist in the database
+vi. 
+primary key - special relational database table column (or combination of columns)        designated to uniquely identify all table records. A primary key's main features are: It must contain a unique value for each row of data. It cannot contain null values.
+ 
+foreign key - a field (or collection of fields) in one table that uniquely identifies a row of another table or the same table
+
+candidate key - a column, or set of columns, in a table that can uniquely identify any database record without referring to any other data
+
+super key - a set of attributes of a relation variable for which it holds that in all relations assigned to that variable, there are no two distinct tuples (rows) that have the same values for the attributes in this set
+
+vii. Referenced and referencing record – a record that is referenced with a foreign key by another record; the attributes of the foreign key have the same domains as the primary key of the second record
+
+C. Tuples can indeed be ordered, as this ensures the attributes in a relation schema are properly organized, which is important. However, the tuples can also not be ordered, as long as the data within the tuples is self-describing. It really depends upon the needs and structure of the database. 
+
+D. Multiple values for an attribute is not allowed, and is the basic idea of the “flat relational model”. Attributes with multiple values must be represented with separate relations. 
+
+
