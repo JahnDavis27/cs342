@@ -1,0 +1,6 @@
+Slate Permutate Schema
+College (ID, name, address)
+Course (ID, title, section, collegeID, creditHours, professor)
+Section (ID, name, courseID, startTime, endTime)
+Student (ID, firstName, lastName, year) 
+Schedule (ID, studentID, totalCreditHours)

@@ -1,0 +1,4 @@
+1.14) a. There are various columns that would need to be changed. In the STUDENT table, the “Major” column would have to be changed. In the COURSE table, the “Course_number” and “Department” columns would have to be changed. In the SECTION table, the “Course_number” field would have to be changed. In the PREREQUISITE table, both columns would have to be changed  (“Course_number” and “Prerequisite_number”).
+
+	b. The schema cannot be reconstructed because the separate tables in the database are necessary to maintain the integrity of all the entities in the database. 
+ 

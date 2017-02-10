@@ -1,4 +1,12 @@
+Jahn Davis
+Lab 02
+2/10/2017
+
 Exercise 2.2
 a. I believe that a constraint could be added to the table based on a new column in the Movie table (i.e upVotes). The value would have to be an integer that was larger than 1000. 
+Therefore, a constraint could be added to that schema that looked like:
 
+	CHECK ((score = null) or (score is NOT NULL and votes > 1000)).
 
+b. I believe separating a constraint from a table definition would be applicable to a situation where a table has records in it that are referenced somewhere else. Therefore, the 
+referencing records could be updated once the constraint is removed, and then once this process is done, the constraint can be reapplied to the referenced table.
