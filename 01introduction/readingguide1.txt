@@ -1,0 +1,23 @@
+1) a. Data can be identified as “known facts that can be recorded and have implicit meaning”. A database is simply a collection of
+    related data. A database management system is a computerized system that allows a user to create and maintain a database. 
+    
+    b. Database systems has various unique qualities that distinguish them from the traditional file system    as well as data 
+    structures and algorithms. While traditional file systems require various users to define and implement various files needed 
+    for a specific program, database systems are structured so that a single repository of information that is defined only once 
+    and allows multiple users to access that data repeatedly in a variety of ways. 
+    
+    c. Database administrators/designers, end users, software engineers, tool developers, DBMS system designers and implementers
+
+2) a. The categories of data models are very important, as they are used to define how a database should be structured, based upon
+the data that goes into the database. It also helps to define the various differences between high-level and low-level data model 
+that describe how data is stored on the computer storage media.
+
+   b. Developed in the 1970s, the three-schema architecture helps to evaluate a relational database from different vantage points.
+The first of the three levels is called the external level, which is the view of the relational database that end users see. The 
+second level is the conceptual level, which describes the structure of the database for a community of users. The third level is 
+the internal schema or internal level, where the database is physically maintained on a hardware system. The three-schema 
+architecture is generally attributed to the ANSI/SPARC group and is also known as the "ANSI/SPARC" architecture.
+
+   c. The tiers typically used in a web based information system reflects those used in a three-schema architecture. The front end
+   tier defines how the user views the data in the database that the system pulls from. The second tier describes how the database
+   used is structured, and the third level defines where the database is actually physically stored. 
