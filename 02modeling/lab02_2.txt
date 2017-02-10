@@ -1,0 +1,4 @@
+Exercise 2.2
+a. I believe that a constraint could be added to the table based on a new column in the Movie table (i.e upVotes). The value would have to be an integer that was larger than 1000. 
+
+

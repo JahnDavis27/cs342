@@ -1,5 +1,0 @@
---The dual table is a dummy table that contatins a single record that is used where the user
---  does not really care about the data, but wants the results of a system function in a SELECT
---  statement. 
--- For example, we cannot use the query "SELECT 3+4". but we CAN use the query "SELECT 3+4 FROM DUAL"
---  as a workaround. 
