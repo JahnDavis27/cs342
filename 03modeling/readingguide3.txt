@@ -1,0 +1,31 @@
+1a) Compare and contrast the database and the software design processes. Are agile modeling 
+practices applicable to database design as well?
+*	These design  processes are actually quite similar. Although there are some practices that are 
+typically applicable to the software design process, changes in the industry and how database 
+can be accessed and implemented into software applications, such as mobile apps. Therefore, 
+there are some agile modeling practices that can play a part into database design processes of 
+the present day. 
+1b) Explain the following terms: entities, relationships (including cardinality and participation 
+constraints), attributes (simple, composite, multi-valued and derived).
+*	Entity – a thing or object in the real world with an independent existence; may be an object with 
+a physical or conceptual existence
+*	Attribute – The particular properties that describe an entity
+o	Simple – attributes that are not divisible
+o	Composite – can be divided into smaller subparts which represent more basic attributes 
+with independent meanings
+o	Multivalued – can have a set of values (attributes) for a single entity; may have upper 
+and lower bounds to constrain the number of values allowed for each entity
+o	Derived – an attribute that can be given a value based upon the value of other attributes 
+(i.e. age from birthdate)
+*	Relationships
+o	Cardinality – specifies the maximum number of relationship instances that an entity can 
+participate in
+o	Participation constraint – specifies whether the existence of an entity depends on its 
+being related to another entity via the relationship type
+1c) Explain weak entities and identifying relationships.
+o	Weak entities are entities that have no key attributes of their own, which makes them weak. 
+o	Identifying relationships  occur when entities belonging to a weak entity are identified by being 
+related to specific entities from another entity type in combination with one of their attribute 
+values. 
+1d) 
+
