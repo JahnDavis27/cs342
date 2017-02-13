@@ -5,6 +5,7 @@ typically applicable to the software design process, changes in the industry and
 can be accessed and implemented into software applications, such as mobile apps. Therefore, 
 there are some agile modeling practices that can play a part into database design processes of 
 the present day. 
+
 1b) Explain the following terms: entities, relationships (including cardinality and participation 
 constraints), attributes (simple, composite, multi-valued and derived).
 *	Entity – a thing or object in the real world with an independent existence; may be an object with 
@@ -22,6 +23,7 @@ o	Cardinality – specifies the maximum number of relationship instances that an
 participate in
 o	Participation constraint – specifies whether the existence of an entity depends on its 
 being related to another entity via the relationship type
+
 1c) Explain weak entities and identifying relationships.
 o	Weak entities are entities that have no key attributes of their own, which makes them weak. 
 o	Identifying relationships  occur when entities belonging to a weak entity are identified by being 
@@ -30,7 +32,7 @@ values.
 
 1d) http://i.imgur.com/nyZUkej.jpg?1 
 
-
+-----------------------------------------------------------------------------------------------
 
 2a) Person (personID, firstName, lastName, title, gender, memStatus, familyID, birthdate)
     Family (familyID, address, city, state, zip)
