@@ -10,6 +10,12 @@ DROP TABLE Movie;
 DROP TABLE Performer;
 
 -- Create database schema
+CREATE SEQUENCE movie_seq START 
+START WITH 1000
+INCREMENT BY 1
+
+
+
 CREATE TABLE Movie (
 	id integer,
 	title varchar(70) NOT NULL, 
