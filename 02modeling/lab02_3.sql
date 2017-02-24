@@ -1,8 +1,8 @@
 -- This command file loads a simple movies database, dropping any existing tables
 -- with the same names, rebuilding the schema and loading the data fresh.
 --
--- CS 342, Spring, 2015
--- kvlinden
+-- CS 342, Spring, 2017
+-- Jahn Davis
 
 -- Drop current database
 DROP TABLE Casting;
