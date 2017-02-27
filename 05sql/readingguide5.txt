@@ -11,7 +11,7 @@ AND firstName = ‘Harrison’)
 
 UNION 
 
-(SELECT DISTINCT movieId…???) 
+(SELECT DISTINCT movieId…???)  
 
 2. Advanced SQL (Sections 7.1.1–7.1.5) — This will include more new material; write sample queries that:
 a. Select based on a NULL field value (Section 7.1.1).
