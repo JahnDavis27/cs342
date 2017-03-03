@@ -43,5 +43,25 @@ WHERE pt.personName = pv.personName;
 		-- the multivalued dependency rule is violated, as the left side is NOT a superkey for the relation. 
 
 --Exercise 4.2c
-	--Just because the number of views and records are the same, this does not mean that they are equally appropriate. The single view needs to have all the records to account for all
-	--of the other information. 
+	--Just because the number of views and records are the same, this does not mean that they are equally 
+	--appropriate. The single view needs to have all the records to account for all of the other information. 
+	--The single "view" relation needs to have every combination of records to make up all the data/information 
+	--for that relation. If you want all the data to appear in a single table every time, then this single 
+	--relation view would be ideal for your needs. But you must take into consideration that single relation is not in 4NF. 
+------------------------------------------------------------------------------------------------------
+-- Exercise 4.2d
+-- Create a new table to store the data queried by the combined "view" query
+DROP TABLE Person;
+
+CREATE TABLE Person (
+	personName varchar(10),
+    teamName varchar(10),
+    personVisit date
+);
+
+INSERT INTO Person
+SELECT pt.personName, pt.teamName, pv.personVisit
+FROM PersonTeam pt, PersonVisit pv
+WHERE pt.personName = pv.personName;
+
+SELECT * FROM Person;

@@ -47,3 +47,41 @@ INSERT INTO AltPerson VALUES (3, 'Jeff', 'm', NULL, NULL, NULL, 'deacons', 'chai
 		
 	--This schema is in BCNF. For each functional dependency in the table, the left hand side of each f.d. is a superkey for the relation.		
 		
+
+		
+-------------------------------------------------------------------------------------------------------------
+--Exercise 4.1c
+
+DROP TABLE Person;
+DROP TABLE Team;
+DROP TABLE Person_Team;
+
+CREATE TABLE Person(
+	personId integer PRIMARY KEY,
+	name varchar(15),
+	status char(1),
+	mentorId integer,
+	FOREIGN KEY (mentorId) REFERENCES Person(personId)
+);
+
+CREATE TABLE Team(
+	teamName varchar(20)
+);
+
+CREATE Person_Team(
+	teamName varchar(20),
+	personId integer,
+	teamRole varchar(20),
+	teamTime varchar(20),
+	FOREIGN KEY (teamName) REFERENCES Team(teamName) ON DELETE CASCADE,
+	FOREIGN KEY (personId) REFERENCES Person(personId)
+);
+
+--Queries
+INSERT INTO Person SELECT DISTINCT personId, name, status, mentorId FROM AltPerson;
+INSERT INTO Team SELECT DISTINCT teamName FROM AltPerson;
+INSERT INTO Person_Team SELECT DISTINCT teamName, personId, teamRole, teamTime FROM AltPerson;
+
+SELECT * FROM Person;
+SELECT * FROM Team;
+SELECT * FROM Person_Team;

@@ -1,0 +1,34 @@
+Do exercise 14.31. Consider only 1NF, BCNF and 4NF; ignore 2NF and 3NF.
+a. This relation is in 1NF, as the values of these attributes are not allowed to have a list of values, but only a single value for each attribute. Our key is (Book_title, Author_name), because this is the only way that each book can be uniquely identified from each other. We then fail to be in BCNF or 4NF, because of the functional dependencies.
+Book_title -> Publisher, Book_type
+Book_type ->List_price
+Author_name -> Author_affil
+These all fail to fulfill the requirement that the left hand side of the FD’s must be superkeys of the relation. As a result, we fail the 4NF requirements as well.
+b. BCNF decomposition:
+o Book_1(Book_title, Author_name)
+o Book_2(Book_title, Publisher, Book_type)
+o Book_3(Book_type, List_price)
+o Book_4(Author_name, Author_affil)y 
+
+Do exercise 14.35. Make the following (potentially counter-intuitive) assumptions.
+* Book_name and edition functionally determine year, but not vice-versa.
+* The title and coauthor names stay the same from edition to edition.
+Your justification of the MVD can be an informal, one-to-two-sentence explanation.
+a. Candidate keys: 
+(Book_Name, Author, Edition)
+This is the only way we can uniquely identify a record within the table. 
+
+b. The sample data demonstrates that books can have multiple authors or editions that fall under the same title. The year and edition and name are all repeated in the database, simply because of the multiple author values for them. 
+
+c. The decomposition of this relation:
+
+Book_1(Book_name, Author)
+Book_2(Book_name, Edition, Copyright_Year)
+	These relations are in BCNF and 4NF. The FDs of the second book are now:
+		Book_name, Edition -> Copyright_Year	
+The key of the first relation is the whole relation, therefore there are no FDs. The key of the second relation fulfills the requirement that the left side is a superkey of the relation. Therefore, it is in BCNF. There are also no multivalued dependencies, so it is also in 4NF. 
+
+
+
+
+
