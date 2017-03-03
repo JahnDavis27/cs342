@@ -5,16 +5,6 @@
 --CS342
 --Spring 2017
 ----------------------------------------------------------------
-
---Drop preexisting tables
-DROP TABLE Position;
-DROP TABLE Player;
-DROP TABLE Team;
-DROP TABLE Season;
-DROP TABLE Games;
-DROP TABLE GameStats;
-
-
 --Create tables
 CREATE TABLE Position(
 	ID integer PRIMARY KEY,
