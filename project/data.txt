@@ -1,0 +1,31 @@
+	The data in this database was pulled directly from ESPN’s website that tracks NBA statistics. The sample entries into the database are based upon 4 of the 9 games that the Golden State Warriors and Cleveland Cavaliers played against each other. Things such as individual performances in each game, the players in the games, the teams, and the various statistics (points, assists, rebounds, steals, blocks, etc.) are tracked. 
+	The schema for this database is going to be 4NF, as this form is very strict about ensuring the legitimacy and integrity of each individual record in every table. 4NF also helps to ensure that redundancy is kept to a bare minimum. 
+
+Demonstration:
+	Player: 
+       ID --> teamID,  firstName, lastName, heightInInches, weightLbs, position, pointsPerGame, assistsPerGame, reboundsPerGame, stealsPerGame, blocksPerGame, fieldGoalPct, threePointPct, freeThrowPct, turnoversPerGame, foulsPerGame, minutesPerGame
+       
+ID is a superkey.
+
+	Team:
+		ID --> name, homeCity, homeState, conference
+       ID is a superkey.
+       
+	Position:
+		ID --> name
+       ID is a superkey.
+       
+	Season:
+		ID --> startYear, endYear, championID, mostValuablePlayerID
+       ID is a superkey.
+
+
+	Games:
+ID -> teamOneID, teamTwoID, teamOneScore, teamTwoScore, gameDate, seasonID,   cityPlayedIn
+	ID is a superkey.
+
+       GameStats:
+ID --> playerID, gameID, positionID, seasonID, fieldGoalsAttempted, fieldGoalsMade, threePointAttempted, threePointMade, freeThrowsAttempted, freeThrowsMade, points, assists, rebounds, steals, blocks, turnovers, fouls, minutesPlayed
+ID is a superkey.
+
+There are no multivalued dependencies for any of the relations. Each entry in the relation is defined uniquely based upon the key of the relation. 

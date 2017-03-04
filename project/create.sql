@@ -21,5 +21,4 @@ GRANT
 CONNECT jrd58/LowBrassSpecialBeam3;
 
 --Create the database
-DEFINE jrd58=
-@&jrd58\load
+@load

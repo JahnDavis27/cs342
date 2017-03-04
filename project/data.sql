@@ -1,3 +1,6 @@
+--Data to be entered into the basketball database.
+--Jahn Davis, CS342
+--------------------------------------------------
 --Positions for basketball players
 INSERT INTO Position VALUES(1, 'PG');
 INSERT INTO Position VALUES(2, 'SG');
