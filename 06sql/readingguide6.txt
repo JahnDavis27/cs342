@@ -1,0 +1,21 @@
+1. Advanced SQL (Section 7.1, continued) — Write sample queries that:
+
+	a. Implement an inner join (Section 7.1.6).
+		SELECT movieID
+		FROM (Peformer JOIN Casting ON id = performerID
+		WHERE performerID = 1;
+
+	b. Implement an outer join (Section 7.1.6).
+		SELECT movieID, performerID
+		FROM Casting
+		OUTER JOIN Movie
+		ON Casting.movieID = Movie.id
+		ORDER BY Movie.id;
+
+	c. Use an aggregate function (Section 7.1.7).
+		SELECT COUNT(*) FROM Movie;
+
+	d. Use grouping (Section 7.1.8).
+		SELECT id, COUNT(*)
+		FROM Movie
+		GROUP BY id;
