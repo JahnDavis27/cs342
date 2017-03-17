@@ -1,0 +1,12 @@
+Lab07_3
+Jahn Davis
+CS 342
+March 17th, 2017
+Keith Vander Linden
+
+
+a.
+	? firstName, lastName, birthdate (? birthdate >= 1961 AND birthdate <= 1975 (Person))
+
+b.
+	{t.firstName, t.lastName, t.birthdate | Person(t) AND t.birthdate >= 1961 AND t.birthdate <= 1975}
