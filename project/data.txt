@@ -1,31 +1,31 @@
-	The data in this database was pulled directly from ESPN’s website that tracks NBA statistics. The sample entries into the database are based upon 4 of the 9 games that the Golden State Warriors and Cleveland Cavaliers played against each other. Things such as individual performances in each game, the players in the games, the teams, and the various statistics (points, assists, rebounds, steals, blocks, etc.) are tracked. 
+	The data in this database was pulled directly from ESPNâ€™s website that tracks NBA statistics. The sample entries into the database are based upon 4 of the 9 games that the Golden State Warriors and Cleveland Cavaliers played against each other. Things such as individual performances in each game, the players in the games, the teams, and the various statistics (points, assists, rebounds, steals, blocks, etc.) are tracked. 
 	The schema for this database is going to be 4NF, as this form is very strict about ensuring the legitimacy and integrity of each individual record in every table. 4NF also helps to ensure that redundancy is kept to a bare minimum. 
 
 Demonstration:
 	Player: 
-       ID --> teamID,  firstName, lastName, heightInInches, weightLbs, position, pointsPerGame, assistsPerGame, reboundsPerGame, stealsPerGame, blocksPerGame, fieldGoalPct, threePointPct, freeThrowPct, turnoversPerGame, foulsPerGame, minutesPerGame
+       	ID --> teamID,  firstName, lastName, heightInInches, weightLbs, position, pointsPerGame, assistsPerGame, reboundsPerGame, stealsPerGame, blocksPerGame, fieldGoalPct, threePointPct, freeThrowPct, turnoversPerGame, foulsPerGame, minutesPerGame
        
-ID is a superkey.
+	ID is a superkey for the entire relation, as all the other fields and their values are dependent upon the ID of the Player record.
 
 	Team:
 		ID --> name, homeCity, homeState, conference
-       ID is a superkey.
+       	ID is a superkey for the entire relation, as the ID functionally determines the values of all the other fields in the table.
        
 	Position:
 		ID --> name
-       ID is a superkey.
+       	ID is a superkey for the relation, as "name" is functionally dependent upon the value of the ID attribute.
        
 	Season:
 		ID --> startYear, endYear, championID, mostValuablePlayerID
-       ID is a superkey.
+       	ID is a superkey for the Season table, as the ID determines what years the season took place in, as well as who won the championship and who won the MVP award that season. 
 
 
 	Games:
-ID -> teamOneID, teamTwoID, teamOneScore, teamTwoScore, gameDate, seasonID,   cityPlayedIn
-	ID is a superkey.
+	ID -> teamOneID, teamTwoID, teamOneScore, teamTwoScore, gameDate, seasonID,   cityPlayedIn
+	ID is a superkey, as the ID determines the two teams who played, the scores of both, as well as the date the game was played and the season and city it took place in.
 
        GameStats:
-ID --> playerID, gameID, positionID, seasonID, fieldGoalsAttempted, fieldGoalsMade, threePointAttempted, threePointMade, freeThrowsAttempted, freeThrowsMade, points, assists, rebounds, steals, blocks, turnovers, fouls, minutesPlayed
-ID is a superkey.
+	ID --> playerID, gameID, positionID, seasonID, fieldGoalsAttempted, fieldGoalsMade, threePointAttempted, threePointMade, freeThrowsAttempted, freeThrowsMade, points, assists, rebounds, steals, blocks, turnovers, fouls, minutesPlayed
+	ID is a superkey, as the other fields are determined by the value of the ID attribute.
 
 There are no multivalued dependencies for any of the relations. Each entry in the relation is defined uniquely based upon the key of the relation. 
