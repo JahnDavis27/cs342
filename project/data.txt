@@ -3,7 +3,7 @@
 
 Demonstration:
 	Player: 
-       ID --> teamID,  firstName, lastName, heightInInches, weightLbs, position, pointsPerGame, assistsPerGame, reboundsPerGame, stealsPerGame, blocksPerGame, fieldGoalPct, threePointPct, freeThrowPct, turnoversPerGame, foulsPerGame, minutesPerGame
+       	ID --> teamID,  firstName, lastName, heightInInches, weightLbs, position, pointsPerGame, assistsPerGame, reboundsPerGame, stealsPerGame, blocksPerGame, fieldGoalPct, threePointPct, freeThrowPct, turnoversPerGame, foulsPerGame, minutesPerGame
        
 	ID is a superkey for the entire relation, as all the other fields and their values are dependent upon the ID of the Player record.
 
