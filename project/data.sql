@@ -11,6 +11,10 @@ INSERT INTO Position VALUES(5, 'C');
 --Added Warriors and Cavaliers teams to database
 INSERT INTO Team VALUES (1, 'Golden State Warriors', 'San Francisco', 'California', 'West');
 INSERT INTO Team VALUES (2, 'Cleveland Cavaliers', 'Cleveland', 'Ohio', 'East');
+INSERT INTO Team VALUES (3, 'San Antonio Spurs', 'San Antonio', 'Texas', 'West');
+INSERT INTO Team VALUES (4, 'Chicago Bulls', 'Chicago', 'Illinois', 'East');
+INSERT INTO Team VALUES (5, 'Oklahoma City Thunder', 'Oklahoma City', 'West');
+INSERT INTO Team VALUES (6, 'Toronto Raptors', )
 
 --Inserting starting players from both teams into the database
 INSERT INTO Player VALUES(1, 1, 'Stephen', 'Curry', 75.0, 190, 1, 30.1, 6.7, 5.4, 2.1, 0.2, .504, .454, .908, 3.3, 2.0, 34.2);
@@ -98,7 +102,6 @@ INSERT INTO GameStats VALUES(46, 7, 4, 2, 1, 10, 3, 8, 2, 2, 2, 10, 1, 2, 0, 0, 
 INSERT INTO GameStats VALUES(47, 7, 5, 2, 1, 9, 3, 2, 1, 3, 3, 10, 1, 2, 1, 0, 1, 5, 31);
 INSERT INTO GameStats VALUES(48, 7, 6, 2, 1, 11, 5, 10, 4, 0, 0, 14, 3, 4, 3, 1, 0, 5, 40);
 INSERT INTO GameStats VALUES(49, 7, 7, 2, 1, 13, 5, 8, 2, 0, 0, 12, 2, 4, 1, 0, 2, 3, 39);
-
 
 --Game stats for LeBron James in 7 games against Golden State in the NBA Finals
 INSERT INTO GameStats VALUES(50, 8, 1, 3, 1, 21, 9, 4, 2, 4, 3, 23, 9, 12, 2, 1, 4, 2, 41);
