@@ -14,31 +14,52 @@ INSERT INTO Team VALUES (2, 'Cleveland Cavaliers', 'Cleveland', 'Ohio', 'East');
 INSERT INTO Team VALUES (3, 'San Antonio Spurs', 'San Antonio', 'Texas', 'West');
 INSERT INTO Team VALUES (4, 'Chicago Bulls', 'Chicago', 'Illinois', 'East');
 INSERT INTO Team VALUES (5, 'Oklahoma City Thunder', 'Oklahoma City', 'West');
-INSERT INTO Team VALUES (6, 'Toronto Raptors', )
+INSERT INTO Team VALUES (6, 'Toronto Raptors', 'Toronto', 'East');
 
 --Inserting starting players from both teams into the database
-INSERT INTO Player VALUES(1, 1, 'Stephen', 'Curry', 75.0, 190, 1, 30.1, 6.7, 5.4, 2.1, 0.2, .504, .454, .908, 3.3, 2.0, 34.2);
-INSERT INTO Player VALUES(2, 1, 'Klay', 'Thompson', 79.0, 215, 2, 22.1, 2.1, 3.8, 0.9, 0.6, .470, .425, .850, 1.7, 1.9, 33.3);
-INSERT INTO Player VALUES(3, 1, 'Harrison', 'Barnes', 80.0, 225, 3, 11.7, 1.8, 4.9, 0.6, 0.2, .466, .383, .761, 0.9, 2.1, 30.9);
-INSERT INTO Player VALUES(4, 1, 'Draymond', 'Green', 79.0, 230, 4, 14.0, 7.4, 9.5, 1.5, 1.4, .490, .388, .696, 3.2, 3.0, 34.7);
-INSERT INTO Player VALUES(5, 1, 'Andrew', 'Bogut', 84.0, 260, 5, 5.4, 2.3, 7.0, 0.5, 1.6, .627, 1.00, .480, 1.2, 3.2, 20.7);
-INSERT INTO Player VALUES(6, 2, 'Kyrie', 'Irving', 75.0, 193, 1, 19.6, 4.7, 3.0, 1.1, 0.3, .448, .321, .885, 2.3, 2.0, 31.5);
-INSERT INTO Player VALUES(7, 2, 'JR', 'Smith', 78.0, 225, 2, 12.4, 1.7, 2.8, 1.1, 0.3, .415, .400, .634, 0.8, 2.6, 30.7);
-INSERT INTO Player VALUES(8, 2,'LeBron', 'James', 80.0, 250, 3, 25.3, 6.8, 7.4, 1.4, 0.6, .520, .309, .731, 3.3, 1.9, 35.6);
-INSERT INTO Player VALUES(9, 2, 'Kevin', 'Love', 82.0, 251, 4, 16.0, 2.4, 9.9, 0.8, 0.5, .419, .360, .822, 1.8, 2.1, 31.5);
-INSERT INTO Player VALUES(10, 2, 'Tristan', 'Thompson', 81.0, 238, 5, 7.8, 0.8, 9.0, 0.5, 0.6, .588, .000, .616, 0.7, 2.5, 27.7);
+INSERT INTO Player VALUES(1, 1, 'Stephen', 'Curry', 75.0, 190, 1);
+INSERT INTO Player VALUES(2, 1, 'Klay', 'Thompson', 79.0, 215, 2);
+INSERT INTO Player VALUES(3, 1, 'Harrison', 'Barnes', 80.0, 225, 3);
+INSERT INTO Player VALUES(4, 1, 'Draymond', 'Green', 79.0, 230, 4);
+INSERT INTO Player VALUES(5, 1, 'Andrew', 'Bogut', 84.0, 260, 5);
+
+INSERT INTO Player VALUES(6, 2, 'Kyrie', 'Irving', 75.0, 193, 1);
+INSERT INTO Player VALUES(7, 2, 'JR', 'Smith', 78.0, 225, 2);
+INSERT INTO Player VALUES(8, 2,'LeBron', 'James', 80.0, 250, 3);
+INSERT INTO Player VALUES(9, 2, 'Kevin', 'Love', 82.0, 251, 4);
+INSERT INTO Player VALUES(10, 2, 'Tristan', 'Thompson', 81.0, 238, 5);
+
+INSERT INTO Player VALUES(11, 3, 'Tony', 'Parker', 74.0, 185, 1);
+INSERT INTO Player VALUES(12, 3, 'Manu', 'Ginobili', 78.0, 205, 2);
+INSERT INTO Player VALUES(13, 3, 'Kawhi', 'Leonard', 79.0, 230, 3);
+INSERT INTO Player VALUES(14, 3, 'Tim', 'Duncan', 83.0, 250, 4);
+INSERT INTO Player VALUES(15, 3, 'Tiago', 'Splitter', 83.0, 245, 5);
+
+INSERT INTO Player VALUES(16, 4, 'Rajon', 'Rondo', 73.0, 186, 1);
+INSERT INTO Player VALUES(17, 4, 'Dwayne', 'Wade', 76.0, 220, 2);
+INSERT INTO Player VALUES(18, 4, 'Jimmy', 'Butler', 79.0, 231, 3);
+INSERT INTO Player VALUES(19, 4, 'Nikola', 'Mirotic', 82.0, 238, 4);
+INSERT INTO Player VALUES(20, 4, 'Robin', 'Lopez', 84.0, 255, 5);
 
 --2015-2016 season
 INSERT INTO Season VALUES(1, 2015, 2016, 2, 1);
 
+
 --9 games where Golden State and Cleveland faced off (regular season and NBA finals)
 INSERT INTO Games VALUES(1, 2, 1, 89, 104, '06-02-2016', 1, 'San Francisco');
 INSERT INTO Games VALUES(2, 2, 1, 77, 110, '06-05-2016', 1, 'San Francisco');
-INSERT INTO Games VALUES(3, 1, 2, 90, 120, '06-08-2016', 2, 'Cleveland');
+INSERT INTO Games VALUES(3, 1, 2, 90, 120, '06-08-2016', 1, 'Cleveland');
 INSERT INTO Games VALUES(4, 1, 2, 108, 97, '06-10-2016', 1, 'Cleveland');
-INSERT INTO Games VALUES(5, 2, 1, 112, 97, '06-13-2016', 2, 'San Francisco');
-INSERT INTO Games VALUES(6, 1, 2, 101, 115, '06-16-2016', 2, 'Cleveland');
-INSERT INTO Games VALUES(7, 2, 1, 93, 89, '06-19-2016', 2, 'San Francisco');
+INSERT INTO Games VALUES(5, 2, 1, 112, 97, '06-13-2016', 1, 'San Francisco');
+INSERT INTO Games VALUES(6, 1, 2, 101, 115, '06-16-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(7, 2, 1, 93, 89, '06-19-2016', 1, 'San Francisco');
+INSERT INTO Games VALUES(8, 2, 4, 95, 97, '10-27-2015', 1, 'Chicago');
+INSERT INTO Games VALUES(9, 4, 2, 96, 83, '01-23-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(10, 4, 2, 95, 106, '02-18-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(11, 2, 4, 102, 105, '04-09-2016' 1, 'Chicago');
+INSERT INTO Games VALUES(12, 2, 4, 99, 103, '11-25-2015', 1, 'Toronto');
+INSERT INTO Games VALUES(13, 4, 2, 100, 122, '01-04-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(14, 2, 4, 97, 99, '02-26-2016', 1, 'Toronto');
 
 --Game stats for Stephen Curry in 7 games against Cleveland in the Finals
 INSERT INTO GameStats VALUES(1, 1, 1, 1, 1, 15, 4, 8, 3, 0, 0, 11, 6, 5, 0, 0, 5, 2, 36);
