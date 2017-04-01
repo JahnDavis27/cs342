@@ -41,7 +41,7 @@ CREATE MATERIALIZED VIEW departmentView AS
 
 -- Homework 7.2d-----------------
 	-- What a shock, this query produces the same error as parts b and c. (-_-) However, if I were to have the FOR UPDATE 
-	-- materialized view working, I would get the same error as exercise 1 part d where I cannot modify more than one base 
+	-- materialized view working, I would get the same error as part d where I can't modify more than one base 
 	-- table at a time through the join view.
 	
 	INSERT INTO departmentView VALUES (1000, 'Jahn', 'Davis', 'JahnDavis27', '05-26-1995', 'Payroll');
