@@ -1,0 +1,22 @@
+Homework 07_3
+Jahn Davis
+CS342
+March 31st, 2017
+Keith Vander Linden
+
+
+
+Homework 7.3
+
+a.
+
+	Relational Algebra:
+		π employee_id, first_name, last_name, email, hire_date, department_name (Employees ∞ department_id = department_id Departments)
+
+	Tuple Calculus:
+		{e.employee_id, e.first_name, e.last_name, e.email, d.hire_date | Employees(e) ^ Departments(d) ^ e.department_id = d.department_id}
+
+b.
+
+	Tuple Calculus:
+		{e.employee_id, e.first_name, e.last_name | deptView(e) ^ e.department_name = 'Executive'}
