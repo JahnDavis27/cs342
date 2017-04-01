@@ -5,6 +5,15 @@
 --Keith Vander Linden
 -----------------------------------------------
 
+--This view only contains the gameID and the playerID and the five main statistical categories.
+--This would be useful for stakeholders who simply want to see the most important stats for a player's
+--performance in a game. 
+CREATE VIEW mainStats AS
+SELECT ID, gameID, playerID, points, assists, rebounds, steals, blocks
+FROM GameStats
+WHERE points > 30 
+AND playerID = 8;
+
 --This query is a simple query that returns all the players on a team for a certain season. 
 --In this example, this grabs all players in the DB who are members of the Golden State Warriors for the 
 -- 2015-2016 NBA season. People who might want this query would be people trying to organize rosters for teams,
