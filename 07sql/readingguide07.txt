@@ -1,0 +1,24 @@
+Views (Section 7.3, for Monday)
+
+a. Write a simple view specification. For details on Oracle views, see Managing Views.
+	CREATE VIEW Performed_In
+	AS SELECT C.performerID, C.movieID
+	FROM Performer P, Casting C
+	WHERE P.ID = C.performerID AND C.movieID IS NOT NULL;
+
+b. Define the following terms (in the comments of your SQL command file).
+
+	i. Base Tables
+		-Tables whose tuples are always physically stored in the database
+
+	ii. Join Views
+		-Views that specify more than one base table or view in the FROM clause
+	
+	iii. Updateable Join Views
+		-A join view where UPDATE, INSERT, and DELETE operations are allowed
+	
+	iv. Key-Preserved Tables
+		-A table where every key of the table can also be a key of the result of the join
+	
+	v. Views that are implemented via query modification vs materialization. (For details on Oracle materialization, see Materialized View Concepts and Architecture, focusing on the “What is a Materialized View?” and “Why Use Materialized Views” sections.)
+		

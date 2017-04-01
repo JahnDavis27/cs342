@@ -1,0 +1,63 @@
+1a. Name the three basic approaches to database programming.
+	- Embedding database commands in a general-purpose programming language
+	- Using a library of database functions or classes
+	- Designing a brand-new language
+
+1b.Explain the concepts of:
+
+	i. impedance mismatch
+		- The term used to refere to the problems that occur because of differences between the database model and the programming language model.
+
+	ii. stored procedures
+		- Database program modules (procedures or functions) that are stored and executed by the DBMS at the database server
+
+	iii. triggers
+		- a technique for specifying certain types of active rules
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+2a. Compare and contrast:
+
+	i. procedural vs non-procedural languages
+		- Procedural languages are used in the traditional programming that is based on algorithms or a logical step-by-step process for solving a 
+		problem. A procedural programming language provides a programmer a means to define precisely each step in the performance of a task Non-procedural 
+		programming languages allow users and professional programmers to specify the results they want without specifying how to solve the problem.
+
+	ii. client-side vs server-side database programming
+		- Client-side programming is used to embed SQL statements in applications written in procedural languages such as C, C++, or Java.  Server-side 
+		programming is used to develop data logic that resides in the database
+
+2b. Explain why one would want to do server-side programming using PL/SQL.
+	- PL/SQL is the Oracle Database procedural extension to SQL. PL/SQL is integrated with the database, supporting all Oracle SQL statements, functions, 
+	and data types. Applications written in database APIs can invoke PL/SQL stored subprograms and send PL/SQL code blocks to the database for execution.
+	- Server side programming is easily scalable, and run quickly and efficiently on data, while also reducing how hard the database has to work. Other 
+	reasons include memory allocation, integrity, security with definer's rights procedures, inherited privileges and schema context with invoker's right procedures.
+
+2c. For each of the following code segments, identify the type of the database object and explain what it does.
+
+	i. CREATE PROCEDURE limited_count (limit IN integer) AS
+	BEGIN
+  		FOR i IN 1..limit LOOP
+      		dbms_output.put_line(i);
+  	END LOOP;
+	END;
+ 	- This is a stored procedure which allows the user to supply parameters that help to find the answers or 
+	performed related tasks to a problem. This particular procedure outputs the numbers 1 through the value of 
+	the limit parameter.
+
+	ii. BEGIN
+  	dbms_output.put_line('Hello, PL/SQL!');	
+	END;
+
+	-This is an anonymous procedure, which simply outputs a message in this example.
+ 
+
+	iii. CREATE TRIGGER log_trigger
+  		BEFORE INSERT OR UPDATE OF lastName ON Person
+  		FOR each row
+	BEGIN
+  	dbms_output.put_line('Hello, name change!');
+	END;
+ 
+	-This is a trigger, which is a stored procedure that fires upon the completion of a task or the changing of 
+	the database. This particular trigger fires whenever a last name of a Person is either updated or created. 
+	It simply outputs "Hello, name change!" whenever a lastName is altered in the database. 

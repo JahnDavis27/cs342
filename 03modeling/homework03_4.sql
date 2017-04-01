@@ -1,4 +1,4 @@
--- Lab03
+-- Lab03 extension
 --
 -- CS 342, Spring, 2017
 -- Jahn Davis
