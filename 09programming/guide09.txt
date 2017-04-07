@@ -1,0 +1,163 @@
+Chapter 17
+
+1) B+ Trees — Focus on the Section 17.3 (skipping the material on algorithms).
+	Compare and contrast B-trees and B+-trees.
+	- A B-tree is a method of placing and locating files (called records or keys) in a database. 
+	(The meaning of the letter B has not been explicitly defined.) The B-tree algorithm minimizes 
+	the number of times a medium must be accessed to locate a desired record, thereby speeding up the process. 
+	The tree structure contains keys and the data for those keys, and 
+
+	- A B+ tree is different in the sense that only keys are stored in the leaf nodes. There are several advantages to this approach, as 
+	with no data in the interior nodes the fan-out can be higher than with a B tree, tree depth shorter, reads from secondary storage lower, 
+	cache hit rate on intermediate nodes better, and time to data faster.
+
+
+	Explain what it means for such a tree to be balanced.
+	- There are three general conditions for a tree to be balanced. 
+		1) The left and right subtrees' heights differ by at most one. 
+		2) The left subtree is balanced.
+		3) The right subtree is balanced
+
+	Compare and contrast tree and data pointers.
+		1) The pointers in internal nodes are tree pointers to blocks that are tree nodes.
+		2) The pointers in leaf nodes are data pointers to the data file records or blocks - except for the Pnext pointer,
+		which is a tree pointer to the next leaf node.
+	
+
+
+2) Explain the nature of multiple-attribute indexes (see the introduction to Section 17.4).
+	i. In many retrieval and update requests, multiple attributes are involved. If a certain combination of attributes is
+			used frequently, it is advantageous to set up an access structure to provide efficient access by a key value that is a
+			combination of those attributes.
+	ii. We will refer to keys containing multiple attributes as composite keys.
+	iii. Techniques:
+		1) Order index on multiple attributes
+			a) Lexicographic ordering works similarly to order of character strings.
+			b) An index on a composite key of n attributes works similarly to any index discussed in this chapter so far.
+		2) Partitioned Hashing
+			a) Partitioned hashing is an extension of static external hashing that allows access on multiple keys.
+			b) In partitioned hashing, for a key consisting of n components, the hash function is designed to produce a
+			result with n separate hash addresses. The bucket address is a concatenation of these n addresses.
+			c) It is then possible to search for the required composite search key by looking up the appropriate buckets that
+			match the parts of the address in which we are interested.
+		3) Grid Files
+			a) The grid file concept can be applied to any number of search keys.
+				i) For example, for n search keys, the grid array would have n dimensions.
+				ii) The grid array thus allows a partitioning of the file along the dimensions of the search key attributes
+				and provides an access by combinations of values along those dimensions.
+			b) Grid files perform well in terms of reduction in time for multiple key access.
+			c) However, they represent a space overhead in terms of the grid array structure. Moreover, with dynamic files, a
+			frequent reorganization of the file adds to the maintenance cost.
+
+3) Explain the nature of hash and bitmap indexes (see Sections 17.5.1–2).
+i. Hash Indexes
+				1) It is also possible to create access structures similar to indexes that are based on hashing.
+				2) The hash index is a secondary structure to access the file by using hashing on a search key other than the one
+				used for the primary data file organization.
+				3) The index entries are of the type <K, Pr> or <K, P>, where Pr is a pointer to the record containing the key, or P
+				is a pointer to the block containing the record for that key.
+			ii. Bitmap Indexes
+				1) The bitmap index is another popular data structure that facilitates querying on multiple keys.
+				2) Bitmap indexing is used for relations that contain a large number of rows. It creates an index for one or more
+				columns, and each value or value range in those columns is indexed.
+					a) Typically, a bitmap index is created for those columns that contain a fairly small number of unique values.
+				3) To build a bitmap index on a set of records in a relation, the records must be numbered from 0 to n with an id (a
+				record id or a row id) that can be mapped to a physical address made of a block number and a record offset within the
+				block.
+				4) A bitmap index is built on one particular value of a particular field (the column in a relation) and is just an
+				array of bits.
+					a) Thus, for a given field, there is one separate bitmap index (or a vector) maintained corresponding to each
+					unique value in the database.
+
+Physical Database Design — Focus on the Section 17.7.
+i. Explain the concept of physical database design (PDD).
+				1) Physical design is an activity where the goal is not only to create the appropriate structuring of data in
+				storage, but also to do so in a way that guarantees good performance.
+					a) For a given conceptual schema, there are many physical design alternatives in a given DBMS. It is not possible
+					to make meaningful physical design decisions and performance analyses until the database designer knows the mix
+					of queries, transactions, and applications that are expected to run on the database.
+				2) Physical Database Design Factors
+					a) Analyzing the database queries and transactions
+					b) Analyzing the expected frequency of invocation of queries and transactions
+					c) Analyzing the time constraints of queries and transactions
+					d) Analyzing the expected frequencies of update operations
+					e) Analyzing the uniqueness constraints on attributes
+				3) The physical design decisions for indexing fall into the following categories:
+					a) Whether to index an attribute
+						i) The general rules for creating an index on an attribute are that the attribute must either be a key 
+						unique), or there must be some query that uses that attribute either in a selection condition (equality or
+						range of values) or in a join condition.
+					b) What attribute or attributes to index on
+					c) Whether to set up a clustered index
+						i) At most, one index per table can be a primary or clustering index, because this implies that the file by
+						physically ordered on that attribute.
+					d) Whether to use a hash index over a tree index.
+					e) Whether to use dynamic hashing for the file.
+			ii. Compare and contrast the uses for B-tree, hash, and bitmap indexes in PDD.
+				1) In general, RDBMS's (relational database management systems) use B+-trees for indexing. However, ISAM and hash
+				indexes are also provided in some systems.
+				2) B+-trees support both equality and range queries on the attribute used as the search key.
+				3) Hash indexes work well with equality conditions, particularly during joins to find a matching record(s), but they
+				do not support range queries.
+				
+			iii. Explain whether denormalization should be considered a form of PDD.
+				1) I think that yes, denormalization should be considered a form of PDD. According to the physical database design
+				factors I listed above in part 1 of part d, one would need to consider all those things like analyzing queries, the
+				expected frequencies of those queries, etc., which all should be considered when one would be considering
+				denormalizing (or even normalizing) a database design. Physical database design does not just focus on the actual
+				data storage, but doing so in an appropriate way, which denormalizing or normalizing could help do.
+			
+	2. Chapter 18
+		a. Explain the concept of query optimization (see the introduction to the chapter).
+			i. A query expressed in a high-level query language such as SQL must first be scanned, parsed, and validated.
+				1) The scanner identifies the query tokens - such as SQL keywords, attribute names, and relation names - that appear 
+				in the text of the query.
+				2) The parser checks the query syntax to determine whether it is formulated according to the syntax rules (rules of
+				grammar) of the query language.
+				3) The query must also be validated by checking that all attribute and relation names are valid and semantically
+				meaningful names in the schema of the particular database being queried.
+			ii. An internal representation of the query is then created, usually as a tree data structure called a query tree. It is
+			also possible to represent the query using a graph data structure called a query graph, which is generally a directed
+			acyclic graph (DAG).
+			iii. The DBMS must then devise an execution strategy or query plan for retrieving the results of the query form the
+			database files.
+			iv. A query has many possible execution strategies, and the process of choosing a suitable one for processing a query is
+			known as query optimization.
+				1) The query optimizer module has the task of producing a good execution plan, and the code generator generates the
+				code to execute that plan.
+				2) The runtime database processor has the task of running (executing) the query code, whether in compiled or
+				interpreted mode, to produce the query result.
+					a) If a runtime error results, an error message is generated by the runtime database processor.
+				3) The term optimization is actually a misnomer because in some cases the chosen execution plan is not the optimal 
+				or absolute best) strategy - it is just a reasonably efficient or the best available strategy for executing the query.
+					a) Finding the optimal strategy is usually too time-consuming - except for the simplest of queries.
+					b) Hence, planning of a good execution strategy may be a more accurate description than query optimization.
+		
+	3. Oracle's EXPLAIN PLAN
+		a. Load the small version of the Internet Movie DB defined in the repo (cs342/databases/imdb), configure the auto-trace facility in SQL *Plus (
+		SET SERVEROUTPUT ON; & SET AUTOTRACE ON;) and generate an execution plan for some simply query. What is the execution plan operation used and
+		what does that operation do?
+			i. The query I used was 
+				EXPLAIN PLAN FOR SELECT id, name FROM movie WHERE year = 2007;
+			ii. Then I used the statement
+				SELECT PLAN_TABLE_OUTPUT FROM TABLE (DBMS_XPLAN.DISPLAY());
+			to get the execution plan table data to show up.
+			iii. The operation that was used for my select statement was a TABLE ACCESS FULL. This is also known as full table scan.
+				1) It reads the entire table - all rows and columns - as stored on the disk.
+				
+		b. Explain at least the following operations (see Oracle Execution Plan Operations).
+			i. TABLE ACCESS FULL
+				1) This is also known as full table scan. Reads the entire table - all rows and columns - as stored on the disk.
+				2) Although multi-block read operations improve the speed of a full table scan considerably, it is still one of the most expensive
+				operations. Besides high IO rates, a full table scan must inspect all table rows so it can also consume a considerable amount of CPU
+				time.
+			ii. TABLE ACCESS BY INDEX
+				1) Retrieves a row from the table using the ROWID retrieved from the preceding index lookup.
+			iii. NESTED LOOPS
+				1) Joins two tables by fetching the result from one table and querying the other table for each row from the first.
+			iv. HASH JOIN
+				1) The hash join loads the candidate records from one side of the join into a hash table that is then probed for each row from the
+				other side of the join.
+			v. INDEX UNIQUE SCAN
+				1) The INDEX UNIQUE SCAN performs the B-tree  traversal only. The database uses this operation if a unique constraint ensures that the
+				search criteria will match no more than one entry.
