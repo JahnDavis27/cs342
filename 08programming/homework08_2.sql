@@ -41,44 +41,31 @@ BEGIN
 
 	-- Loop through cursor results
 	FOR actor IN (SELECT actorId FROM Role WHERE movieId IN (SELECT movieId FROM Role WHERE actorId = actorId_Base)) LOOP
-
 		-- If actor is already in the BaconTable
 		SELECT COUNT(*) INTO inBaconTable FROM BaconTable WHERE actorId = actor.actorId;
-
 		-- If actor is not already in the BaconTable, insert into the table
 		IF inBaconTable = 0 THEN
-
 			INSERT INTO BaconTable VALUES (actor.actorId, depthLevel);
 			baconNumber(actor.actorId, depthLevel + 1);
-
 		-- Check for smaller baconNumber already on record
 		ELSE
-
 			SELECT baconNumber INTO currentDepthLevel FROM BaconTable WHERE actorId = actor.actorId;
-
 			IF currentDepthLevel > depthLevel THEN
-
 				UPDATE BaconTable SET baconNumber = depthLevel WHERE actorId = actor.actorId;
 				baconNumber(actor.actorId, depthLevel + 1);
-
 			END IF;
-
 		END IF;
-
 	END LOOP;
-
 END;
 /
 SHOW ERRORS;
 
--- Test the baconNumber procedure with Kevin Bacon's actorId number
+-- Test the baconNumber procedure with Kevin Bacon's actorId
 BEGIN baconNumber(22591, 1); END;
 /
 
 -- Get all the actors with baconNumber of 1
---		I.e. Actors who acted in a movie with Kevin Bacon
 SELECT * FROM BaconTable WHERE baconNumber = 1;
-
 DELETE FROM BaconTable;
 
 -- Test the baconNumber procedure with an actorId that doesn't exist
