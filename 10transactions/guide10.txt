@@ -1,0 +1,72 @@
+1. Sections 20.1-20.4.1 & 20.6 — Explain the following.
+	a. interleaving vs. parallelism
+		- Multiprogramming operating systesm execute some commands from one process, then suspend that process and execute some
+		commands from the next process, and so on. A process is resumed at the point where it was suspended whenever it gets its
+		turn to use the CPU again. Hence, concurrent execution of processes is actually interleaved. 
+
+		- Parallelism is The simultaneous use of more than one CPU to execute a program. Ideally, parallel processing makes a program 
+		run faster because there are more engines (CPUs) running it. In practice, it is often difficult to divide a program in such a 
+		way that separate CPUs can execute different portions without interfering with each other.
+
+	b. the lost update and dirty read problems
+		- A lost update occurs when two different transactions are trying to update the same column on the same row within a database 
+		at the same time. ... The result of the first transaction is then "lost", as it is simply overwritten by the second transaction. 
+		The process is invlolved in a lost update.
+
+		- A dirty read (aka uncommitted dependency) occurs when a transaction is allowed to read data from a row that has been modified by another running transaction and not yet committed.
+		Dirty reads work similarly to non-repeatable reads; however, the second transaction would not need to be committed for the first query to return a different result. The only thing 
+		that may be prevented in the READ UNCOMMITTED isolation level is updates appearing out of order in the results; that is, earlier updates will always appear in a result set before 
+		later updates.
+
+	c. transactions, including commits and rollbacks
+		- A transition is an atomic unti tof work that should either be completed in its entirety or not done at all. For recovery purposes, the system needs to keep track of when each 
+		transaction starts, terminates, and commits, or aborts.
+
+		- Commits signal the successful end of a transaction so that the changes can be committed to the database and not be undone. 
+		
+		- Rollbacks signal the unsuccessful end of a transaction, so any changes that have been made can be undone. 
+
+	d. the ACID properties
+		- Atomicity
+		- Consistency preservation
+		- Isolation
+		- Durability/permanency 
+
+	e. schedule
+		- An ordering of the operations of the transactions
+
+2. Chapter 21 introduction and Section 21.1 — Explain the following.
+
+	a. lock
+		- A variable associated with a data item that describes the sattus of the item with respect to possible operations that can be applied to it
+
+	b. two-phase locking
+		- All locking operations precede the first unlock operation in the transaction. Such a transaction can be divided into two phases: an expanding/growing phase (during which new locks on
+		items can be acquired but none can be released), and a shrinking phase (during which existing locks can be released but no new locks can be acquired.)
+
+
+3. Review Oracle’s Overview of Transaction Processing in PL/SQL (only; you can skip the other sections on this page) — Compare and contrast the following.
+
+	a. SAVEPOINT, COMMIT vs ROLLBACK [TO]
+		- The COMMIT statement ends the current transaction, making any changes made during that transaction permanent, and visible to other users. Transactions are not tied to PL/SQL BEGIN-END 
+		blocks. A block can contain multiple transactions, and a transaction can span multiple blocks.
+
+		- SAVEPOINT names and marks the current point in the processing of a transaction. Savepoints let you roll back part of a transaction instead of the whole transaction. The number of active 
+		savepoints for each session is unlimited.
+
+		- The ROLLBACK statement ends the current transaction and undoes any changes made during that transaction. If you make a mistake, such as deleting the wrong row from a table, a rollback 
+		restores the original data. If you cannot finish a transaction because an exception is raised or a SQL statement fails, a rollback lets you take corrective action and perhaps start over.
+	
+	b. LOCK TABLE vs. FOR UPDATE
+		- You use the LOCK TABLE statement to lock entire database tables in a specified lock mode so that you can share or deny access to them. Row share locks allow concurrent access to a table; 
+		they prevent other users from locking the entire table for exclusive use. Table locks are released when your transaction issues a commit or rollback.The lock mode determines what other locks 
+		can be placed on the table. For example, many users can acquire row share locks on a table at the same time, but only one user at a time can acquire an exclusive lock. While one user has an 
+		exclusive lock on a table, no other users can insert, delete, or update rows in that table.
+
+		- When you declare a cursor that will be referenced in the CURRENT OF clause of an UPDATE or DELETE statement, you must use the FOR UPDATE clause to acquire exclusive row locks. An example follows:
+		The SELECT ... FOR UPDATE statement identifies the rows that will be updated or deleted, then locks each row in the result set. This is useful when you want to base an update on the existing values 
+		in a row. In that case, you must make sure the row is not changed by another user before the update.The optional keyword NOWAIT tells Oracle not to wait if requested rows have been locked by another user. 
+		Control is immediately returned to your program so that it can do other work before trying again to acquire the lock. If you omit the keyword NOWAIT, Oracle waits until the rows are available.
+		All rows are locked when you open the cursor, not as they are fetched. The rows are unlocked when you commit or roll back the transaction. Since the rows are no longer locked, you cannot fetch from a 
+		FOR UPDATE cursor after a commit. When querying multiple tables, you can use the FOR UPDATE clause to confine row locking to particular tables. Rows in a table are locked only if the FOR UPDATE OF 
+		clause refers to a column in that table. For example, the following query locks rows in the employees table but not in the departments table:
