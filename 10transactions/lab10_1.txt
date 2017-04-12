@@ -1,0 +1,25 @@
+-- Lab10
+-- Jahn Davis
+-- April 12th, 2017
+-- CS342
+-- Keith Vander Linden
+--------------------------------
+
+Session 1											Session 2											Comments
+----------------------------------					----------------------------------					--------------------------------
+Query the movie table.								Query the movie table.								Return the same result. (TRUE)
+Delete a movie and query the modified table.		Repeat the query.									Session 1 will show the change, but Session 2 will not. (TRUE)
+Rollback and query.									Repeat...											Session 1 will return to its original state. Session 2 will not change. (TRUE)
+Add a new movie and query.							Repeat...											Session 1 will show the new number of movies. Session 2 will not. (TRUE)
+Commit.												Repeat...											Session 1 and 2 will now both be the same, as the commit is applied to both sessions. (TRUE)
+
+
+
+10a. Does Oracle handle the transaction life-cycle (see Figure 20.4) with respect to starting and stopping SQL*Plus sessions?
+		- Oracle rollbacks to the start of the current sqlplus session (or the most recent commit) upon the stopping of the sqlplus session if there has not been a manual commit or autocommit is
+		not enabled. 
+		
+		
+10b. Can we implement any of the ACID properties using START-TRANSACTION/SAVEPOINT/ROLLBACK/COMMIT?
+		- These operations aren't enough to ensure that ACID properties are being used. We have to use the proper lock mechanisms in order to make sure that ACID is enforced. When
+		transactions occur, we must lock whatever is being read or changed so that it cannot be interfered with by a separate SQL*Plus session. 

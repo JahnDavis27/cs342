@@ -1,0 +1,3 @@
+/*Session 2*/
+
+UPDATE Movie M SET M.rank = M.rank+0.2 WHERE M.id = 238071;
