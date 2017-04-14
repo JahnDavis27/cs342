@@ -1,19 +1,38 @@
--- Script 2 for Lab 10.2a
+-- Script 2 for Lab 10.3a
 -- Jahn Davis
 -- April 14th, 2017
 -- CS342
 -- Keith Vander Linden
 ---------------------------------
 
+SQL> lock table movie in exclusive mode nowait;
+lock table movie in exclusive mode nowait
+           *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired 
+
+
+SQL> lock table movie in exclusive mode nowait;
+
+Table(s) Locked.
+
 SQL> SELECT rank FROM Movie WHERE id = 238071;
 
       RANK                                                                      
 ----------                                                                      
-       8.5                                                                      
+       8.7                                                                      
 
 SQL> UPDATE Movie SET rank = 8.4 WHERE id = 238071;
 
 1 row updated.
+
+SQL> SELECT rank FROM Movie WHERE id = 238071;
+
+      RANK                                                                      
+----------                                                                      
+       8.4                                                                      
+
+SQL> COMMIT;
 
 Commit complete.
 

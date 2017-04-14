@@ -1,3 +1,26 @@
-/*Session 1*/
+-- Script 1 for Lab 10.2a
+-- Jahn Davis
+-- April 14th, 2017
+-- CS342
+-- Keith Vander Linden
+---------------------------------
 
-UPDATE Movie M SET M.rank = M.rank+0.1 WHERE M.id = 238071;
+SQL> SELECT rank FROM Movie WHERE id = 238071;
+
+      RANK                                                                      
+----------                                                                      
+       8.5                                                                      
+
+SQL> UPDATE Movie SET rank = 8.7 WHERE id = 238071;
+
+1 row updated.
+
+Commit complete.
+
+SQL> SELECT rank FROM Movie WHERE id = 238071;
+
+      RANK                                                                      
+----------                                                                      
+       8.4                                                                      
+
+SQL> spool off;
