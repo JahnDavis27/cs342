@@ -14,27 +14,22 @@ FROM GameStats
 WHERE points > 30 
 AND playerID = 8;
 
---This query is a simple query that returns all the players on a team for a certain season. 
---In this example, this grabs all players in the DB who are members of the Golden State Warriors for the 
--- 2015-2016 NBA season. People who might want this query would be people trying to organize rosters for teams,
--- or determining roster sizes, etc.
-SELECT * FROM Player P, Team T, Season S
-WHERE P.teamID = T.ID 
-AND S.startYear = 2015 
-AND S.endYear = 2016  
-AND Team.name = 'Golden State Warriors';
+--This query calculates the amount of money a player earned for every point they scored. In this case, we use LeBron James to determine his bucks/point ratio
+--....It's going to be something ridiculously large. 
+SELECT SUM(GS.points), AVG(SUM(GS.points)/P.salary) FROM Player P, GameStats GS
+WHERE P.firstName = 'LeBron'
+AND GS.playerID = P.ID; 
 
 
 --This query returns all the points, assists, and rebounds from each game for a player during a certain season.
 -- This query would be useful for people trying to gather the complete statistics on a player's season cumulatively. 
-SELECT GS.points, GS.assists, GS.rebounds FROM Player P, Season S, Team T, Games G, GameStats GS
-WHERE P.firstName = 'LeBron'
+SELECT  P.firstName, P.lastName, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, Games G, GameStats GS
+WHERE GS.points >= 10
+AND GS.assists >= 10
+AND GS.rebounds >= 10
 AND P.ID = GS.playerID 
-AND S.startYear = 2015 
-AND GS.seasonID = S.ID 
-AND GS.gameID = G.ID
-AND T.name = "Cleveland Cavaliers"
-AND T.ID = GS.teamID;
+AND GS.gameID = G.ID;
+
 
 --This query returns all games played in a certain city. This would be useful for anyone fetching all of
 -- the home games for a team. 
