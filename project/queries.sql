@@ -16,10 +16,11 @@ AND playerID = 8;
 
 --This query calculates the amount of money a player earned for every point they scored. In this case, we use LeBron James to determine his bucks/point ratio
 --....It's going to be something ridiculously large. 
-SELECT SUM(GS.points), AVG(SUM(GS.points)/P.salary) FROM Player P, GameStats GS
+SELECT P.salary / SUM(GS.points) AS dollarsPerPoint 
+FROM Player P, GameStats GS
 WHERE P.firstName = 'LeBron'
-AND GS.playerID = P.ID; 
-
+AND GS.playerID = P.ID
+GROUP BY P.salary ;
 
 --This query returns all the points, assists, and rebounds from each game for a player during a certain season.
 -- This query would be useful for people trying to gather the complete statistics on a player's season cumulatively. 
@@ -31,11 +32,10 @@ AND P.ID = GS.playerID
 AND GS.gameID = G.ID;
 
 
---This query returns all games played in a certain city. This would be useful for anyone fetching all of
--- the home games for a team. 
-SELECT G1.gameDate, G1.ID, G1.seasonID 
-FROM Game AS G1, Game AS G2
-WHERE G1.cityPlayedIn = G2.cityPlayedIn;
+--This query lists all players and their salaries for the 2016-17 season in order from largest to smallest. 
+SELECT firstName, lastName, salary FROM Player P
+WHERE P.firstName IS NOT NULL
+ORDER BY salary desc;
 
 --This query selects all players who are over 6'6" tall. This might be useful to find all players over a certain
 --height in the entire league.
@@ -45,9 +45,10 @@ WHERE P.height =
 	FROM Player P
 	WHERE P.height > 78.0);
 	
---This query calculates the average points scored for a certain player during a season based upon the player's name.
+--This query calculates the average points, average assists, and average rebounds for a certain player for all their GameStats 
+--in the database based upon the player's name.
 --This would be useful for anyone trying to calculate the averages for a season for any player. 
-SELECT AVG(points) FROM GameStats GS, Player P
+SELECT ROUND(AVG(GS.points),1) AS PPG, ROUND(AVG(GS.assists), 1) AS APG, ROUND(AVG(GS.rebounds), 1) AS RPG, ROUND(AVG(GS.steals), 1) AS SPG, ROUND(AVG(GS.blocks), 1) AS BPG FROM GameStats GS, Player P
 WHERE GS.playerID = P.ID 
 AND GS.seasonID = 1
 AND P.firstName = 'LeBron';
