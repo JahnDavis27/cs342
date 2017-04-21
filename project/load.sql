@@ -3,10 +3,10 @@
 --------------------------------------------
 
 -- Drop the previous table declarations.
-@&jrd58\drop         
+@drop         
 
 -- Reload the table declarations.
-@&jrd58\schema
+@schema
 
 -- Load the table data.
-@&jrd58\data
+@data

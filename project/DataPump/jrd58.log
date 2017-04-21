@@ -1,0 +1,24 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Thu Apr 20 20:24:38 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "JRD58"."SYS_EXPORT_TABLE_01":  jrd58/******** parfile=jrd58.par 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 384 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+. . exported "JRD58"."GAMES"                             8.304 KB      10 rows
+. . exported "JRD58"."GAMESTATS"                         16.50 KB      70 rows
+. . exported "JRD58"."PLAYER"                            10.92 KB      80 rows
+. . exported "JRD58"."POSITION"                          5.460 KB       5 rows
+. . exported "JRD58"."SEASON"                            6.703 KB       1 rows
+. . exported "JRD58"."TEAM"                              7.359 KB      16 rows
+Master table "JRD58"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for JRD58.SYS_EXPORT_TABLE_01 is:
+  C:\USERS\JRD58\DOCUMENTS\PROJECT\JRD58.DMP
+Job "JRD58"."SYS_EXPORT_TABLE_01" successfully completed at 20:24:42

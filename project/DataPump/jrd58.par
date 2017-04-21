@@ -1,0 +1,4 @@
+DIRECTORY=exp_dir
+DUMPFILE=jrd58.dmp 
+LOGFILE=jrd58.log
+TABLES=jrd58.Position,jrd58.Player,jrd58.Team,jrd58.Season,jrd58.Games,jrd58.GameStats
