@@ -1,0 +1,112 @@
+Query:
+SELECT  P.firstName, P.lastName, G.gameDate, G.cityPlayedIn, T.name, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, Games G, GameStats GS, Team T
+WHERE GS.points >= 10
+AND GS.assists >= 10
+AND GS.rebounds >= 10
+AND P.ID = GS.playerID
+AND P.teamID = T.ID
+AND GS.gameID = G.ID;
+
+***********************Execution Plan**********************************
+
+Elapsed: 00:00:00.03
+
+Execution Plan
+----------------------------------------------------------
+Plan hash value: 2468444798
+
+--------------------------------------------------------------------------------
+
+---------------
+
+| Id  | Operation                       | Name        | Rows  | Bytes | Cost (%C
+
+PU)| Time     |
+
+--------------------------------------------------------------------------------
+
+---------------
+
+|   0 | SELECT STATEMENT                |             |     1 |   250 |     2
+(0)| 00:00:01 |
+
+|   1 |  NESTED LOOPS                   |             |       |       |
+   |          |
+
+|   2 |   NESTED LOOPS                  |             |     1 |   250 |     2
+(0)| 00:00:01 |
+
+|   3 |    NESTED LOOPS                 |             |     1 |   211 |     2
+(0)| 00:00:01 |
+
+|   4 |     NESTED LOOPS                |             |     1 |   171 |     2
+(0)| 00:00:01 |
+
+|*  5 |      TABLE ACCESS FULL          | GAMESTATS   |     1 |    91 |     2
+(0)| 00:00:01 |
+
+|   6 |      TABLE ACCESS BY INDEX ROWID| PLAYER      |     1 |    80 |     0
+(0)| 00:00:01 |
+
+|*  7 |       INDEX UNIQUE SCAN         | SYS_C007362 |     1 |       |     0
+(0)| 00:00:01 |
+
+|   8 |     TABLE ACCESS BY INDEX ROWID | TEAM        |     1 |    40 |     0
+(0)| 00:00:01 |
+
+|*  9 |      INDEX UNIQUE SCAN          | SYS_C007361 |     1 |       |     0
+(0)| 00:00:01 |
+
+|* 10 |    INDEX UNIQUE SCAN            | SYS_C007368 |     1 |       |     0
+(0)| 00:00:01 |
+
+|  11 |   TABLE ACCESS BY INDEX ROWID   | GAMES       |     1 |    39 |     0
+(0)| 00:00:01 |
+
+--------------------------------------------------------------------------------
+
+---------------
+
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   5 - filter("GS"."POINTS">=10 AND "GS"."ASSISTS">=10 AND "GS"."REBOUNDS">=10)
+   7 - access("P"."ID"="GS"."PLAYERID")
+   9 - access("P"."TEAMID"="T"."ID")
+  10 - access("GS"."GAMEID"="G"."ID")
+
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
+
+
+Statistics
+----------------------------------------------------------
+         15  recursive calls
+          0  db block gets
+         29  consistent gets
+          0  physical reads
+          0  redo size
+       1217  bytes sent via SQL*Net to client
+        523  bytes received via SQL*Net from client
+          2  SQL*Net roundtrips to/from client
+          1  sorts (memory)
+          0  sorts (disk)
+          1  rows processed
+
+*******************Analysis of Execution Plan*************************************
+This query is designed to find all of the occurences of a triple-double for any player in any game that is in the database.
+It displays the player's first and last name, the date of the game, where the game occurred, and the statistics for the five
+main categories (points, assists, rebounds, steals, and blocks).
+
+This query joins four tables together: Player, Team, Games, and GameStats. The query uses multiple operations in order to accurately
+return the data that we're looking for. It performs an INDEX FULL SCAN on the GameStats table because it needs to output data for every
+GameStat in the database, so the INDEX FULL SCAN reads the entire index (all rows) in index order.While looking at a specific
+player in the database, this query performs a TABLE UNIQUE SCAN on all the other tables used (Player, Team, and Games), which is performed when there is a unique
+constraint that ensures the search criteria will match no more than one entry. Each of these lookups is tied with a TABLE ACCESS BY INDEX ROWID to
+retrieve a row from that table using the ROWID retrieved from a preceding index lookup operation.
+
+These other tables all have a single column primary key, which can be used as their index individually (as shown in the Predicate Information section).
+Since Oracle does most of the optimization on its own and this query is just a simple join of multiple tables, there really aren't many things that can be done to optimize this
+query. 

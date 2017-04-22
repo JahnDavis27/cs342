@@ -22,13 +22,14 @@ WHERE P.firstName = 'LeBron'
 AND GS.playerID = P.ID
 GROUP BY P.salary ;
 
---This query returns all the points, assists, and rebounds from each game for a player during a certain season.
+--This query returns all the points, assists, and rebounds from each game for a player during a certain season, as well the details of the game the triple double occured.
 -- This query would be useful for people trying to gather the complete statistics on a player's season cumulatively. 
-SELECT  P.firstName, P.lastName, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, Games G, GameStats GS
+SELECT  P.firstName, P.lastName, G.gameDate, G.cityPlayedIn, T.name, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, Games G, GameStats GS, Team T
 WHERE GS.points >= 10
 AND GS.assists >= 10
 AND GS.rebounds >= 10
-AND P.ID = GS.playerID 
+AND P.ID = GS.playerID
+AND P.teamID = T.ID
 AND GS.gameID = G.ID;
 
 
@@ -47,7 +48,7 @@ WHERE P.height =
 	
 --This query calculates the average points, average assists, and average rebounds for a certain player for all their GameStats 
 --in the database based upon the player's name.
---This would be useful for anyone trying to calculate the averages for a season for any player. 
+--This would be useful for anyone trying to calculate the averages for a season for any player, as well as for a career. 
 SELECT ROUND(AVG(GS.points),1) AS PPG, ROUND(AVG(GS.assists), 1) AS APG, ROUND(AVG(GS.rebounds), 1) AS RPG, ROUND(AVG(GS.steals), 1) AS SPG, ROUND(AVG(GS.blocks), 1) AS BPG FROM GameStats GS, Player P
 WHERE GS.playerID = P.ID 
 AND GS.seasonID = 1
