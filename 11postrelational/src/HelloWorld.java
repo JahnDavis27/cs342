@@ -17,3 +17,48 @@ public class HelloWorld {
         return "Hello World";
     }
 }
+
+  /*
+     * HTTP GET request to url Lab11_war/hello/api
+     * Return the simple message "Getting..."
+     */
+    @Path("/api")
+    @GET
+    @Produces("text/plain")
+    public String getHomeworkMessage() {
+        return "Getting...";
+    }
+
+    /*
+     * HTTP POST request that posts data/resources (typically for updating resources according to online resources)
+     */
+    @Path("/api/{message}")
+    @POST
+    @Consumes("text/plain")
+    @Produces("text/plain")
+    public String postClichedMessage(@PathParam("message") String temp_message) {
+        return "Posting: " + temp_message;
+    }
+
+    /*
+     * HTTP PUT request that puts data/resources (typically for creating resources according to online sources)
+     */
+    @Path("/api/{integer}")
+    @PUT
+    @Consumes("text/plain")
+    @Produces("text/plain")
+    public String putClichedMessage(@PathParam("integer") int temp_int) {
+        return "Putting: " + temp_int;
+    }
+
+    /*
+     * HTTP DELETE request that deletes a given integer
+     */
+    @Path("api/{integer}")
+    @DELETE
+    @Consumes("text/plain")
+    @Produces("text/plain")
+    public String deleteIntegerMessage(@PathParam("integer") int temp_int) {
+        return "Deleting: " + temp_int;
+    }
+}
