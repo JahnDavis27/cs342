@@ -18,26 +18,39 @@
 		- We are using GlassFish in this class. 
 	
 	c. Chapter 5, "Mapping, Round Pegs into Square Holes" - Annotate this Java class for object-relational mapping using Java Annotations with the property access type.
+		i. In particular, add annotations for the following.
+				1) Persistence Entity - Annotate the class as a persistence entity (Chapter 5 overview).
+				2) OID - Annotate the object ID (Section 5.2).
+				3) Basic Fields - Annotate the non-ID fields (Section 5.6).
+				4) Relationships - Add new fields/accessors/annotations that exemplify the following JPA relationships (Section 5.7
+				overview and Sections 5.7.2 - 5.7.4).
+					a) A many-to-one relationship to a commander - The commander is another Solder object.
+					b) A many-to-many relationship to a Battle class - You don't need to add the Battle class.
+					
+		ii. You don't need to run this code, but be familiar with the concepts and the annotations that implement them.
+			
+	********************Solution*****************************
+
 			@Entity
 			public class Solder {
 			
-				@Basic                       // Don't need this because it is the default, but for practice purposes I will keep it here
+				@Basic                      
 				@Column(name="NAME")
 				private String name;
 				
-				@Basic                       // Don't need this because it is the default, but for practice purposes I will keep it here
+				@Basic                       
 				@Column(name="RANK")
 				private String rank;
 				
-				@Id                          // Id mappings are also basic mappings
+				@Id                          
 				@Column(name="serialNumber")
 				private long serialNumber;
 				
-				@ManyToOne(fetch=FetchType.LAZY)        // Many to one relationship (many solders can have the same commander)
+				@ManyToOne(fetch=FetchType.LAZY)        //Many soldiers can have the same commander
 				@JoinColumn(name="commanderSerialNumber")
 				private long commanderSerialNumber;
 				
-				@ManytoMany            // Many to many relationship (a solder can be in many battles and a battle can have many solders)
+				@ManytoMany            //A soldier can be in many battles and a battle can have many soldiers
 				@JoinTable(
 					name="Solder_Battles",
 					joinColumns=@JoinColumn(name="Solder_SerialNumber", referencedColumnName="serialNumber"),
@@ -53,17 +66,7 @@
 				public String getSerialNumber() { return serialNumber; }
 				public void setSerialNumber(String serialNumber) { this.serialNumber = serialNumber; }
 				
-			i. In particular, add annotations for the following.
-				1) Persistence Entity - Annotate the class as a persistence entity (Chapter 5 overview).
-				2) OID - Annotate the object ID (Section 5.2).
-				3) Basic Fields - Annotate the non-ID fields (Section 5.6).
-				4) Relationships - Add new fields/accessors/annotations that exemplify the following JPA relationships (Section 5.7
-				overview and Sections 5.7.2 - 5.7.4).
-					a) A many-to-one relationship to a commander - The commander is another Solder object.
-					b) A many-to-many relationship to a Battle class - You don't need to add the Battle class.
-					
-			ii. You don't need to run this code, but be familiar with the concepts and the annotations that implement them.
-
+			
 
 	d. Chapter 6, “Runtime, Doing the Hokey Pokey (EntityManager)”
 

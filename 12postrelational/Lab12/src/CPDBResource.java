@@ -1,12 +1,10 @@
+import models.Household;
 import models.Person;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -34,7 +32,7 @@ public class CPDBResource {
      * @return a static hello-world message
      */
     @GET
-    @Path(value = "hello")
+    @Path("hello")
     @Produces("text/plain")
     public String getClichedMessage() {
         return "Hello, JPA!";
@@ -65,6 +63,65 @@ public class CPDBResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Person> getPeople() {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Person.class)).getResultList();
+    }
+
+    /**
+     * PUT (modify) person with id x (from URL) and the passed person object
+     * Returns the same person object
+     *
+     * Written by: Jahn Davis
+     * CS 342 - Homework11
+     * May 5th, 2017
+     */
+    @PUT
+    @Path("person/{x}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Person putPerson(@PathParam("x") long temp_id, Person person) {
+        Person tempPerson = em.find(Person.class, temp_id);
+        if (tempPerson != null) {
+            em.merge(person);
+        }
+        return person;
+    }
+
+    /**
+     * POST (insert) person using information from the request
+     * Return the person that was posted into the database
+     *
+     * Written by: Jahn Davis
+     * CS 342 - Homework11
+     * May 5th, 2017
+     */
+    @POST
+    @Path("people")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Person postPerson(Person person) {
+        Person tempPerson = new Person();
+        person.setId(tempPerson.getId());
+        person.setHousehold(em.find(Household.class, person.getHousehold().getId()));
+        em.persist(person);
+        return person;
+    }
+
+    /**
+     * DELETE person with id x from URL.
+     * Return the person that was deleted, if that person was in the database
+     *
+     * Written by: Jahn Davis
+     * CS 342 - Homework11
+     * May 5th, 2017
+     */
+    @DELETE
+    @Path("person/{x}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Person deletePerson(@PathParam("x") long temp_id) {
+        Person person = em.find(Person.class, temp_id);
+        if (person != null) {
+            em.remove(person);
+        }
+        return person;
     }
 
 }

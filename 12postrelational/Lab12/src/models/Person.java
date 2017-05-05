@@ -2,14 +2,16 @@ package models;
 
 import javax.persistence.*;
 import java.sql.Time;
-import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by jrd58 on 4/28/2017.
+/*
+ * Created by jrd58 on 4/29/2017.
  */
 @Entity
 public class Person {
+    @Id
+    @GeneratedValue(generator = "cpdbSequence")
+    @SequenceGenerator(name = "cpdbSequence", sequenceName = "cpdb_sequence", allocationSize = 1)
     private long id;
     private String title;
     private String firstname;
@@ -17,12 +19,29 @@ public class Person {
     private String membershipstatus;
     private String gender;
     private Time birthdate;
-    private Long householdid;
     private String householdrole;
-    private Long homegroupid;
     private String homegrouprole;
+
+    // Create the ManyToOne relationship between a Person and a Household
+    @ManyToOne
+    @JoinColumn(name = "HOUSEHOLDID", referencedColumnName = "ID")
     private Household household;
-    private Collection<Team> teamList;
+
+    // Declare the accessor and mutator methods for the Person's Household
+    public Household getHousehold() { return household; }
+    public void setHousehold(Household new_household) { this.household = new_household; }
+
+    // Create the ManyToMany relationship between a Person and a Team
+    // Many Persons can be on many teams.
+    @ManyToMany
+    @JoinTable(name = "PERSONTEAM", schema = "CPDB",
+                joinColumns = @JoinColumn(name = "PERSONID", referencedColumnName = "ID", nullable = false),
+                inverseJoinColumns = @JoinColumn(name = "TEAMNAME", referencedColumnName = "NAME", nullable = false))
+    private List<Team> teams;
+
+    // Declare the accessor and mutator methods for the Person's Team list
+    public List<Team> getTeamList() { return teams; }
+    public void setTeamList(List<Team> new_teamList) { this.teams = new_teamList; }
 
     @Id
     @Column(name = "ID")
@@ -94,20 +113,25 @@ public class Person {
         this.birthdate = birthdate;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "HOUSEHOLDID", referencedColumnName = "ID")
-    public Household getHousehold() {return household; }
+    @Basic
+    @Column(name = "HOUSEHOLDROLE")
+    public String getHouseholdrole() {
+        return householdrole;
+    }
 
-    public void setHousehold(Household household) {this.household = household;}
+    public void setHouseholdrole(String householdrole) {
+        this.householdrole = householdrole;
+    }
 
-    @ManyToMany
-    @JoinTable(name = "PERSONTEAM", schema = "CPDB",
-            joinColumns = @JoinColumn(name = "PERSONID", referencedColumnName = "ID", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "TEAMNAME", referencedColumnName = "NAME", nullable = false))
-    public Collection<Team> getTeam() {return teamList;}
+    @Basic
+    @Column(name = "HOMEGROUPROLE")
+    public String getHomegrouprole() {
+        return homegrouprole;
+    }
 
-    public void setTeam(Collection<Team> listTeams) {this.teamList = listTeams;}
-
+    public void setHomegrouprole(String homegrouprole) {
+        this.homegrouprole = homegrouprole;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -124,6 +148,10 @@ public class Person {
             return false;
         if (gender != null ? !gender.equals(person.gender) : person.gender != null) return false;
         if (birthdate != null ? !birthdate.equals(person.birthdate) : person.birthdate != null) return false;
+        if (householdrole != null ? !householdrole.equals(person.householdrole) : person.householdrole != null)
+            return false;
+        if (homegrouprole != null ? !homegrouprole.equals(person.homegrouprole) : person.homegrouprole != null)
+            return false;
 
         return true;
     }
@@ -137,46 +165,8 @@ public class Person {
         result = 31 * result + (membershipstatus != null ? membershipstatus.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         result = 31 * result + (birthdate != null ? birthdate.hashCode() : 0);
+        result = 31 * result + (householdrole != null ? householdrole.hashCode() : 0);
+        result = 31 * result + (homegrouprole != null ? homegrouprole.hashCode() : 0);
         return result;
-    }
-
-    @Basic
-    @Column(name = "HOUSEHOLDID")
-    public Long getHouseholdid() {
-        return householdid;
-    }
-
-    public void setHouseholdid(Long householdid) {
-        this.householdid = householdid;
-    }
-
-    @Basic
-    @Column(name = "HOUSEHOLDROLE")
-    public String getHouseholdrole() {
-        return householdrole;
-    }
-
-    public void setHouseholdrole(String householdrole) {
-        this.householdrole = householdrole;
-    }
-
-    @Basic
-    @Column(name = "HOMEGROUPID")
-    public Long getHomegroupid() {
-        return homegroupid;
-    }
-
-    public void setHomegroupid(Long homegroupid) {
-        this.homegroupid = homegroupid;
-    }
-
-    @Basic
-    @Column(name = "HOMEGROUPROLE")
-    public String getHomegrouprole() {
-        return homegrouprole;
-    }
-
-    public void setHomegrouprole(String homegrouprole) {
-        this.homegrouprole = homegrouprole;
     }
 }
