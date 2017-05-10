@@ -27,101 +27,198 @@ INSERT INTO Team VALUES (15, 'Memphis Grizzlies', 'Memphis', 'Tennessee', 'West'
 INSERT INTO Team VALUES (16, 'Indiana Pacers', 'Indianapolis', 'Indiana', 'East');
 
 --Inserting starting players from both teams into the database
-INSERT INTO Player VALUES(1, 1, 'Stephen', 'Curry', 75.0, 190, 1, 12112359);
-INSERT INTO Player VALUES(2, 1, 'Klay', 'Thompson', 79.0, 215, 2, 16663575);
-INSERT INTO Player VALUES(3, 1, 'Harrison', 'Barnes', 80.0, 225, 3, 22116750);
-INSERT INTO Player VALUES(4, 1, 'Draymond', 'Green', 79.0, 230, 4, 15330435);
-INSERT INTO Player VALUES(5, 1, 'Andrew', 'Bogut', 84.0, 260, 5, 11027027);
+INSERT INTO Player VALUES(1, 'Stephen', 'Curry', 75.0, 190, 1, 12112359);
+INSERT INTO Player VALUES(2, 'Klay', 'Thompson', 79.0, 215, 2, 16663575);
+INSERT INTO Player VALUES(3, 'Harrison', 'Barnes', 80.0, 225, 3, 22116750);
+INSERT INTO Player VALUES(4, 'Draymond', 'Green', 79.0, 230, 4, 15330435);
+INSERT INTO Player VALUES(5, 'Andrew', 'Bogut', 84.0, 260, 5, 11027027);
 
-INSERT INTO Player VALUES(6, 2, 'Kyrie', 'Irving', 75.0, 193, 1, 17638063);
-INSERT INTO Player VALUES(7, 2, 'JR', 'Smith', 78.0, 225, 2, 12800000);
-INSERT INTO Player VALUES(8, 2,'LeBron', 'James', 80.0, 250, 3, 30963450);
-INSERT INTO Player VALUES(9, 2, 'Kevin', 'Love', 82.0, 251, 4, 21165675);
-INSERT INTO Player VALUES(10, 2, 'Tristan', 'Thompson', 81.0, 238, 5, 15330435);
+INSERT INTO Player VALUES(6, 'Kyrie', 'Irving', 75.0, 193, 1, 17638063);
+INSERT INTO Player VALUES(7, 'JR', 'Smith', 78.0, 225, 2, 12800000);
+INSERT INTO Player VALUES(8, 'LeBron', 'James', 80.0, 250, 3, 30963450);
+INSERT INTO Player VALUES(9, 'Kevin', 'Love', 82.0, 251, 4, 21165675);
+INSERT INTO Player VALUES(10, 'Tristan', 'Thompson', 81.0, 238, 5, 15330435);
 
-INSERT INTO Player VALUES(11, 3, 'Tony', 'Parker', 74.0, 185, 1, 14445313);
-INSERT INTO Player VALUES(12, 3, 'Manu', 'Ginobili', 78.0, 205, 2, 14000000);
-INSERT INTO Player VALUES(13, 3, 'Kawhi', 'Leonard', 79.0, 230, 3, 17638063);
-INSERT INTO Player VALUES(14, 3, 'Tim', 'Duncan', 83.0, 250, 4, 1881250);
-INSERT INTO Player VALUES(15, 3, 'Tiago', 'Splitter', 83.0, 245, 5, 8550000);
+INSERT INTO Player VALUES(11, 'Tony', 'Parker', 74.0, 185, 1, 14445313);
+INSERT INTO Player VALUES(12, 'Manu', 'Ginobili', 78.0, 205, 2, 14000000);
+INSERT INTO Player VALUES(13, 'Kawhi', 'Leonard', 79.0, 230, 3, 17638063);
+INSERT INTO Player VALUES(14, 'Tim', 'Duncan', 83.0, 250, 4, 1881250);
+INSERT INTO Player VALUES(15, 'Tiago', 'Splitter', 83.0, 245, 5, 8550000);
 
-INSERT INTO Player VALUES(16, 4, 'Jeff', 'Teague', 73.0, 186, 1, 8800000);
-INSERT INTO Player VALUES(17, 4, 'Kyle', 'Korver', 79.0, 212, 2, 5239437);
-INSERT INTO Player VALUES(18, 4, 'Kent', 'Bazemore', 79.0, 231, 3, 15730338);
-INSERT INTO Player VALUES(19, 4, 'Paul', 'Millsap', 80.0, 246, 4, 20072033);
-INSERT INTO Player VALUES(20, 4, 'Al', 'Horford', 82.0, 245, 5, 26540100);
+INSERT INTO Player VALUES(16, 'Jeff', 'Teague', 73.0, 186, 1, 8800000);
+INSERT INTO Player VALUES(17, 'Kyle', 'Korver', 79.0, 212, 2, 5239437);
+INSERT INTO Player VALUES(18, 'Kent', 'Bazemore', 79.0, 231, 3, 15730338);
+INSERT INTO Player VALUES(19, 'Paul', 'Millsap', 80.0, 246, 4, 20072033);
+INSERT INTO Player VALUES(20, 'Al', 'Horford', 82.0, 245, 5, 26540100);
 
-INSERT INTO Player VALUES(21, 5, 'Russell', 'Westbrook', 75.0, 187, 1, 26540100);
-INSERT INTO Player VALUES(22, 5, 'Dion', 'Waiters', 76.0, 225, 2, 2898000);
-INSERT INTO Player VALUES(23, 5, 'Kevin', 'Durant', 79.0, 240, 3, 26540100);
-INSERT INTO Player VALUES(24, 5, 'Serge', 'Ibaka', 82.0, 235, 4, 12250000);
-INSERT INTO Player VALUES(25, 5, 'Steven', 'Adams', 84.0, 255, 5, 3140517);
+INSERT INTO Player VALUES(21, 'Russell', 'Westbrook', 75.0, 187, 1, 26540100);
+INSERT INTO Player VALUES(22, 'Dion', 'Waiters', 76.0, 225, 2, 2898000);
+INSERT INTO Player VALUES(23, 'Kevin', 'Durant', 79.0, 240, 3, 26540100);
+INSERT INTO Player VALUES(24, 'Serge', 'Ibaka', 82.0, 235, 4, 12250000);
+INSERT INTO Player VALUES(25, 'Steven', 'Adams', 84.0, 255, 5, 3140517);
 
-INSERT INTO Player VALUES(26, 6, 'Kyle', 'Lowry', 72.0, 205, 1, 12000000);
-INSERT INTO Player VALUES(27, 6, 'Demar', 'Derozan', 79.0, 221, 2, 26540100);
-INSERT INTO Player VALUES(28, 6, 'Terrence', 'Ross', 79.0, 207, 3, 10000000);
-INSERT INTO Player VALUES(29, 6, 'Patrick', 'Patterson', 81.0, 230, 4, 6050000);
-INSERT INTO Player VALUES(30, 6, 'Bismack', 'Biyombo', 81.0, 225, 5, 17000000);
+INSERT INTO Player VALUES(26, 'Kyle', 'Lowry', 72.0, 205, 1, 12000000);
+INSERT INTO Player VALUES(27, 'Demar', 'Derozan', 79.0, 221, 2, 26540100);
+INSERT INTO Player VALUES(28, 'Terrence', 'Ross', 79.0, 207, 3, 10000000);
+INSERT INTO Player VALUES(29, 'Patrick', 'Patterson', 81.0, 230, 4, 6050000);
+INSERT INTO Player VALUES(30, 'Bismack', 'Biyombo', 81.0, 225, 5, 17000000);
 
-INSERT INTO Player VALUES(31, 7, 'Patrick', 'Beverly', 73.0, 185, 1, 6000000);
-INSERT INTO Player VALUES(32, 7, 'James', 'Harden', 77.0, 220, 2, 26540100);
-INSERT INTO Player VALUES(33, 7, 'Trevor', 'Ariza', 80.0, 215, 3, 7806971);
-INSERT INTO Player VALUES(34, 7, 'Terrence', 'Jones', 81.0, 252, 4, 1050961);
-INSERT INTO Player VALUES(35, 7, 'Dwight', 'Howard', 83.0, 265, 5, 23180275);
+INSERT INTO Player VALUES(31, 'Patrick', 'Beverly', 73.0, 185, 1, 6000000);
+INSERT INTO Player VALUES(32, 'James', 'Harden', 77.0, 220, 2, 26540100);
+INSERT INTO Player VALUES(33, 'Trevor', 'Ariza', 80.0, 215, 3, 7806971);
+INSERT INTO Player VALUES(34, 'Terrence', 'Jones', 81.0, 252, 4, 1050961);
+INSERT INTO Player VALUES(35, 'Dwight', 'Howard', 83.0, 265, 5, 23180275);
 
-INSERT INTO Player VALUES(36, 8, 'Damian', 'Lillard', 75.0, 195, 1, 24328425);
-INSERT INTO Player VALUES(37, 8, 'CJ', 'McCollum', 76.0, 200, 2, 3219579);
-INSERT INTO Player VALUES(38, 8, 'Al-Farouq', 'Aminu', 81.0, 220, 3, 7680965);
-INSERT INTO Player VALUES(39, 8, 'Ed', 'Davis', 82.0, 240, 4, 6666667);
-INSERT INTO Player VALUES(40, 8, 'Mason', 'Plumlee', 83.0, 245, 5, 2328530);
+INSERT INTO Player VALUES(36, 'Damian', 'Lillard', 75.0, 195, 1, 24328425);
+INSERT INTO Player VALUES(37, 'CJ', 'McCollum', 76.0, 200, 2, 3219579);
+INSERT INTO Player VALUES(38, 'Al-Farouq', 'Aminu', 81.0, 220, 3, 7680965);
+INSERT INTO Player VALUES(39, 'Ed', 'Davis', 82.0, 240, 4, 6666667);
+INSERT INTO Player VALUES(40, 'Mason', 'Plumlee', 83.0, 245, 5, 2328530);
 
-INSERT INTO Player VALUES(41, 9, 'Isaiah', 'Thomas', 69.0, 185, 1, 6587132);
-INSERT INTO Player VALUES(42, 9, 'Avery', 'Bradley', 74.0, 180, 2, 8269663);
-INSERT INTO Player VALUES(43, 9, 'Jae', 'Crowder', 78.0, 235, 3, 6286408);
-INSERT INTO Player VALUES(44, 9, 'Amir', 'Johnson', 81.0, 240, 4, 12000000);
-INSERT INTO Player VALUES(45, 9, 'Kelly', 'Olynyk', 84.0, 238, 5, 3094014);
+INSERT INTO Player VALUES(41, 'Isaiah', 'Thomas', 69.0, 185, 1, 6587132);
+INSERT INTO Player VALUES(42, 'Avery', 'Bradley', 74.0, 180, 2, 8269663);
+INSERT INTO Player VALUES(43, 'Jae', 'Crowder', 78.0, 235, 3, 6286408);
+INSERT INTO Player VALUES(44, 'Amir', 'Johnson', 81.0, 240, 4, 12000000);
+INSERT INTO Player VALUES(45, 'Kelly', 'Olynyk', 84.0, 238, 5, 3094014);
 
-INSERT INTO Player VALUES(46, 10, 'Kemba', 'Walker', 73.0, 172, 1, 12000000);
-INSERT INTO Player VALUES(47, 10, 'Jeremy', 'Lin', 75.0, 200, 2, 11483254);
-INSERT INTO Player VALUES(48, 10, 'Nicolas', 'Batum', 80.0, 200, 3, 20869566);
-INSERT INTO Player VALUES(49, 10, 'Marvin', 'Williams', 81.0, 237, 4, 12250000);
-INSERT INTO Player VALUES(50, 10, 'Cody', 'Zeller', 84.0, 240, 5, 5318313);
+INSERT INTO Player VALUES(46, 'Kemba', 'Walker', 73.0, 172, 1, 12000000);
+INSERT INTO Player VALUES(47, 'Jeremy', 'Lin', 75.0, 200, 2, 11483254);
+INSERT INTO Player VALUES(48, 'Nicolas', 'Batum', 80.0, 200, 3, 20869566);
+INSERT INTO Player VALUES(49, 'Marvin', 'Williams', 81.0, 237, 4, 12250000);
+INSERT INTO Player VALUES(50, 'Cody', 'Zeller', 84.0, 240, 5, 5318313);
 
-INSERT INTO Player VALUES(51, 11, 'Raymond', 'Felton', 73.0, 205, 1, 1551659);
-INSERT INTO Player VALUES(52, 11, 'John', 'Jenkins', 76.0, 215, 2, 469841);
-INSERT INTO Player VALUES(53, 11, 'Wesley', 'Matthews', 77.0, 220, 3, 17100000);
-INSERT INTO Player VALUES(54, 11, 'Dirk', 'Nowitzki', 84.0, 245, 4, 25000000);
-INSERT INTO Player VALUES(55, 11, 'Zaza', 'Pachulia', 83.0, 270, 5, 2898000);
+INSERT INTO Player VALUES(51, 'Raymond', 'Felton', 73.0, 205, 1, 1551659);
+INSERT INTO Player VALUES(52, 'John', 'Jenkins', 76.0, 215, 2, 469841);
+INSERT INTO Player VALUES(53, 'Wesley', 'Matthews', 77.0, 220, 3, 17100000);
+INSERT INTO Player VALUES(54, 'Dirk', 'Nowitzki', 84.0, 245, 4, 25000000);
+INSERT INTO Player VALUES(55, 'Zaza', 'Pachulia', 83.0, 270, 5, 2898000);
 
-INSERT INTO Player VALUES(56, 12, 'Chris', 'Paul', 72.0, 175, 1, 22868828);
-INSERT INTO Player VALUES(57, 12, 'Jamal', 'Crawford', 77.0, 200, 2, 13253012);
-INSERT INTO Player VALUES(58, 12, 'Wesley', 'Johnson', 79.0, 215, 3, 5628000);
-INSERT INTO Player VALUES(59, 12, 'Blake', 'Griffin', 82.0, 251, 4, 20140838);
-INSERT INTO Player VALUES(60, 12 ,'DeAndre', 'Jordan', 83.0, 265, 5, 21165675);
+INSERT INTO Player VALUES(56, 'Chris', 'Paul', 72.0, 175, 1, 22868828);
+INSERT INTO Player VALUES(57, 'Jamal', 'Crawford', 77.0, 200, 2, 13253012);
+INSERT INTO Player VALUES(58, 'Wesley', 'Johnson', 79.0, 215, 3, 5628000);
+INSERT INTO Player VALUES(59, 'Blake', 'Griffin', 82.0, 251, 4, 20140838);
+INSERT INTO Player VALUES(60, 'DeAndre', 'Jordan', 83.0, 265, 5, 21165675);
 
-INSERT INTO Player VALUES(61, 13, 'Goran', 'Dragic', 75.0, 190, 1, 15890000);
-INSERT INTO Player VALUES(62, 13, 'Dwyane', 'Wade', 76.0, 220, 2, 23200000);
-INSERT INTO Player VALUES(63, 13, 'Justise', 'Winslow', 79.0, 225, 3, 2593440);
-INSERT INTO Player VALUES(64, 13, 'Luol', 'Deng', 81.0, 220, 4, 18000000);
-INSERT INTO Player VALUES(65, 13, 'Hassan', 'Whiteside', 84.0, 265, 5, 22116750);
+INSERT INTO Player VALUES(61, 'Goran', 'Dragic', 75.0, 190, 1, 15890000);
+INSERT INTO Player VALUES(62, 'Dwyane', 'Wade', 76.0, 220, 2, 23200000);
+INSERT INTO Player VALUES(63, 'Justise', 'Winslow', 79.0, 225, 3, 2593440);
+INSERT INTO Player VALUES(64, 'Luol', 'Deng', 81.0, 220, 4, 18000000);
+INSERT INTO Player VALUES(65, 'Hassan', 'Whiteside', 84.0, 265, 5, 22116750);
 
-INSERT INTO Player VALUES(66, 14, 'Reggie', 'Jackson', 75.0, 208, 1, 14956522);
-INSERT INTO Player VALUES(67, 14, 'Kentavious', 'Caldwell-Pope', 77.0, 205, 2, 3678319);
-INSERT INTO Player VALUES(68, 14, 'Marcus', 'Morris', 81.0, 235, 3, 4625000);
-INSERT INTO Player VALUES(69, 14, 'Ersan', 'Ilyasova', 82.0, 235, 4, 8400000);
-INSERT INTO Player VALUES(70, 14, 'Andre', 'Drummond', 83.0, 279, 5, 22116750);
+INSERT INTO Player VALUES(66, 'Reggie', 'Jackson', 75.0, 208, 1, 14956522);
+INSERT INTO Player VALUES(67, 'Kentavious', 'Caldwell-Pope', 77.0, 205, 2, 3678319);
+INSERT INTO Player VALUES(68, 'Marcus', 'Morris', 81.0, 235, 3, 4625000);
+INSERT INTO Player VALUES(69, 'Ersan', 'Ilyasova', 82.0, 235, 4, 8400000);
+INSERT INTO Player VALUES(70, 'Andre', 'Drummond', 83.0, 279, 5, 22116750);
 
-INSERT INTO Player VALUES(71, 15, 'Mike', 'Conley', 73.0, 175, 1, 26540100);
-INSERT INTO Player VALUES(72, 15, 'Tony', 'Allen', 76.0, 213, 2, 5505618);
-INSERT INTO Player VALUES(73, 15, 'Matt', 'Barnes', 79.0, 226, 3, 6125000);
-INSERT INTO Player VALUES(74, 15, 'Zach', 'Randolph', 81.0, 260, 4, 10361445);
-INSERT INTO Player VALUES(75, 15, 'Marc', 'Gasol', 85.0, 255, 5, 21165675);
+INSERT INTO Player VALUES(71, 'Mike', 'Conley', 73.0, 175, 1, 26540100);
+INSERT INTO Player VALUES(72, 'Tony', 'Allen', 76.0, 213, 2, 5505618);
+INSERT INTO Player VALUES(73, 'Matt', 'Barnes', 79.0, 226, 3, 6125000);
+INSERT INTO Player VALUES(74, 'Zach', 'Randolph', 81.0, 260, 4, 10361445);
+INSERT INTO Player VALUES(75, 'Marc', 'Gasol', 85.0, 255, 5, 21165675);
 
-INSERT INTO Player VALUES(76, 16, 'George', 'Hill', 75.0, 188, 1, 8000000);
-INSERT INTO Player VALUES(77, 16, 'Monta', 'Ellis', 75.0, 185, 2, 10770000);
-INSERT INTO Player VALUES(78, 16, 'Paul', 'George', 81.0, 220, 3, 18314532);
-INSERT INTO Player VALUES(79, 16, 'Lavoy', 'Allen', 81.0, 260, 4, 4000000);
-INSERT INTO Player VALUES(80, 16, 'Ian', 'Mahinmi', 83.0, 250, 5, 15944154);
+INSERT INTO Player VALUES(76, 'George', 'Hill', 75.0, 188, 1, 8000000);
+INSERT INTO Player VALUES(77, 'Monta', 'Ellis', 75.0, 185, 2, 10770000);
+INSERT INTO Player VALUES(78, 'Paul', 'George', 81.0, 220, 3, 18314532);
+INSERT INTO Player VALUES(79, 'Lavoy', 'Allen', 81.0, 260, 4, 4000000);
+INSERT INTO Player VALUES(80, 'Ian', 'Mahinmi', 83.0, 250, 5, 15944154);
+
+--Defines the members of a team in the PlayerTeam table for all 16 teams in the database
+INSERT INTO PlayerTeam VALUES(1, 1);
+INSERT INTO PlayerTeam VALUES(2, 1);
+INSERT INTO PlayerTeam VALUES(3, 1);
+INSERT INTO PlayerTeam VALUES(4, 1);
+INSERT INTO PlayerTeam VALUES(5, 1);
+
+INSERT INTO PlayerTeam VALUES(6, 2);
+INSERT INTO PlayerTeam VALUES(7, 2);
+INSERT INTO PlayerTeam VALUES(8, 2);
+INSERT INTO PlayerTeam VALUES(9, 2);
+INSERT INTO PlayerTeam VALUES(10, 2);
+
+INSERT INTO PlayerTeam VALUES(11, 3);
+INSERT INTO PlayerTeam VALUES(12, 3);
+INSERT INTO PlayerTeam VALUES(13, 3);
+INSERT INTO PlayerTeam VALUES(14, 3);
+INSERT INTO PlayerTeam VALUES(15, 3);
+
+INSERT INTO PlayerTeam VALUES(16, 4);
+INSERT INTO PlayerTeam VALUES(17, 4);
+INSERT INTO PlayerTeam VALUES(18, 4);
+INSERT INTO PlayerTeam VALUES(19, 4);
+INSERT INTO PlayerTeam VALUES(20, 4);
+
+INSERT INTO PlayerTeam VALUES(21, 5);
+INSERT INTO PlayerTeam VALUES(22, 5);
+INSERT INTO PlayerTeam VALUES(23, 5);
+INSERT INTO PlayerTeam VALUES(24, 5);
+INSERT INTO PlayerTeam VALUES(25, 5);
+
+INSERT INTO PlayerTeam VALUES(26, 6);
+INSERT INTO PlayerTeam VALUES(27, 6);
+INSERT INTO PlayerTeam VALUES(28, 6);
+INSERT INTO PlayerTeam VALUES(29, 6);
+INSERT INTO PlayerTeam VALUES(30, 6);
+
+INSERT INTO PlayerTeam VALUES(31, 7);
+INSERT INTO PlayerTeam VALUES(32, 7);
+INSERT INTO PlayerTeam VALUES(33, 7);
+INSERT INTO PlayerTeam VALUES(34, 7);
+INSERT INTO PlayerTeam VALUES(35, 7);
+
+INSERT INTO PlayerTeam VALUES(36, 8);
+INSERT INTO PlayerTeam VALUES(37, 8);
+INSERT INTO PlayerTeam VALUES(38, 8);
+INSERT INTO PlayerTeam VALUES(39, 8);
+INSERT INTO PlayerTeam VALUES(40, 8);
+
+INSERT INTO PlayerTeam VALUES(41, 9);
+INSERT INTO PlayerTeam VALUES(42, 9);
+INSERT INTO PlayerTeam VALUES(43, 9);
+INSERT INTO PlayerTeam VALUES(44, 9);
+INSERT INTO PlayerTeam VALUES(45, 9);
+
+INSERT INTO PlayerTeam VALUES(46, 10);
+INSERT INTO PlayerTeam VALUES(47, 10);
+INSERT INTO PlayerTeam VALUES(48, 10);
+INSERT INTO PlayerTeam VALUES(49, 10);
+INSERT INTO PlayerTeam VALUES(50, 10);
+
+INSERT INTO PlayerTeam VALUES(51, 11);
+INSERT INTO PlayerTeam VALUES(52, 11);
+INSERT INTO PlayerTeam VALUES(53, 11);
+INSERT INTO PlayerTeam VALUES(54, 11);
+INSERT INTO PlayerTeam VALUES(55, 11);
+
+INSERT INTO PlayerTeam VALUES(56, 12);
+INSERT INTO PlayerTeam VALUES(57, 12);
+INSERT INTO PlayerTeam VALUES(58, 12);
+INSERT INTO PlayerTeam VALUES(59, 12);
+INSERT INTO PlayerTeam VALUES(60, 12);
+
+INSERT INTO PlayerTeam VALUES(61, 13);
+INSERT INTO PlayerTeam VALUES(62, 13);
+INSERT INTO PlayerTeam VALUES(63, 13);
+INSERT INTO PlayerTeam VALUES(64, 13);
+INSERT INTO PlayerTeam VALUES(65, 13);
+
+INSERT INTO PlayerTeam VALUES(66, 14);
+INSERT INTO PlayerTeam VALUES(67, 14);
+INSERT INTO PlayerTeam VALUES(68, 14);
+INSERT INTO PlayerTeam VALUES(69, 14);
+INSERT INTO PlayerTeam VALUES(70, 14);
+
+INSERT INTO PlayerTeam VALUES(71, 15);
+INSERT INTO PlayerTeam VALUES(72, 15);
+INSERT INTO PlayerTeam VALUES(73, 15);
+INSERT INTO PlayerTeam VALUES(74, 15);
+INSERT INTO PlayerTeam VALUES(75, 15);
+
+INSERT INTO PlayerTeam VALUES(76, 16);
+INSERT INTO PlayerTeam VALUES(77, 16);
+INSERT INTO PlayerTeam VALUES(78, 16);
+INSERT INTO PlayerTeam VALUES(79, 16);
+INSERT INTO PlayerTeam VALUES(80, 16);
 
 --2015-2016 season
 INSERT INTO Season VALUES(1, 2015, 2016, 2, 1);
@@ -134,9 +231,28 @@ INSERT INTO Games VALUES(4, 1, 2, 108, 97, '10-June-2016', 1, 'Cleveland');
 INSERT INTO Games VALUES(5, 2, 1, 112, 97, '13-June-2016', 1, 'San Francisco');
 INSERT INTO Games VALUES(6, 1, 2, 101, 115, '16-June-2016', 1, 'Cleveland');
 INSERT INTO Games VALUES(7, 2, 1, 93, 89, '19-June-2016', 1, 'San Francisco');
-INSERT INTO Games VALUES(8, 2, 4, 99, 103, '25-Nov-2015', 1, 'Toronto');
-INSERT INTO Games VALUES(9, 4, 2, 100, 122, '04-Jan-2016', 1, 'Cleveland');
-INSERT INTO Games VALUES(10, 2, 4, 97, 99, '26-Feb-2016', 1, 'Toronto');
+INSERT INTO Games VALUES(8, 6, 2, 84, 115, '17-May-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(9, 6, 2, 89, 108, '19-May-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(10, 2, 6, 84, 99, '21-May-2016', 1, 'Toronto');
+INSERT INTO Games VALUES(11, 2, 6, 99, 105, '23-May-2016', 1, 'Toronto');
+INSERT INTO Games VALUES(12, 6, 2, 78, 116, '25-May-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(13, 2, 6, 113, 87, '27-May-2016', 1, 'Toronto');
+INSERT INTO Games VALUES(14, 4, 2, 93, 104, '02-May-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(15, 4, 2, 98, 123, '04-May-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(16, 2, 4, 121, 108, '06-May-2016', 1, 'Atlanta');
+INSERT INTO Games VALUES(17, 2, 4, 100, 99, '08-May-2016', 1, 'Atlanta');
+INSERT INTO Games VALUES(18, 14, 2, 106, 101, '17-Apr-2016', 1, 'Cleveland'):
+INSERT INTO Games VALUES(19, 14, 2, 90, 107, '19-Apr-2016', 1, 'Cleveland');
+INSERT INTO Games VALUES(20, 2, 14, 101, 91, '21-Apr-2016', 1, 'Detroit');
+INSERT INTO Games VALUES(21, 2, 14, 100, 98, '23-Apr-2016', 1, 'Detroit');
+
+INSERT INTO Games VALUES(22, 9, 4, 101, 102, '16-Apr-2016', 1, 'Atlanta');
+INSERT INTO Games VALUES(23, 9, 4, 72, 89, '18-Apr-2016', 1, 'Atlanta');
+INSERT INTO Games VALUES(24, 4, 9, 103, 111, '20-Apr-2016', 1, 'Boston');
+INSERT INTO Games VALUES(25, 4, 9, 95, 104, '22-Apr-2016', 1, 'Boston');
+INSERT INTO Games VALUES(26, 9, 4, 83, 110, '24-Apr-2016', 1, 'Atlanta');
+INSERT INTO Games VALUES(27, 4, 9, 104, 92, '26-Apr-2016', 1, 'Boston');
+
 
 --Game stats for Stephen Curry in 7 games against Cleveland in the Finals
 INSERT INTO GameStats VALUES(1, 1, 1, 1, 1, 15, 4, 8, 3, 0, 0, 11, 6, 5, 0, 0, 5, 2, 36);

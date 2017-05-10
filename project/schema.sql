@@ -21,15 +21,21 @@ CREATE TABLE Team(
 	
 CREATE TABLE Player(
 	ID integer PRIMARY KEY, 
-	teamID integer,
 	firstName varchar(50),
 	lastName varchar(50),
 	heightInches float,
 	weightLbs integer,
 	position integer,
 	salary integer,
-	FOREIGN KEY (position) REFERENCES Position(ID) ON DELETE SET NULL,
-	FOREIGN KEY (teamID) REFERENCES Team(ID) ON DELETE SET NULL
+	FOREIGN KEY (position) REFERENCES Position(ID) ON DELETE SET NULL
+	);
+	
+CREATE TABLE PlayerTeam(
+	playerID integer,
+	teamID integer,
+	PRIMARY KEY (playerID, teamID),
+	FOREIGN KEY (playerID) REFERENCES Player(ID) ON DELETE CASCADE,
+	FOREIGN KEY (teamID) REFERENCES Team(ID) ON DELETE CASCADE
 	);
 	
 CREATE TABLE Season(
