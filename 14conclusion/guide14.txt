@@ -1,0 +1,76 @@
+Work through the following materials this week:
+
+1) Read Section 30.1:
+	a. Name and explain the four kinds of control measures required for database security.
+		- Access control is handled by creating user accounts and passwords to control the login process by the DBMS. This is done to prevent
+		unauthorized persons from accessing the system itself, either to obtain information or to make malicious changes in a portion of the 
+		database.
+
+		- Inference control is a control used in the output of databases to stop a person who has access to only summary information from being
+		able to determine (infer) a particular value for a particular record.
+
+		- Flow control is used to prevent information from flowing in such a way that it reaches unauthorized users. 
+
+		- Data encryption is used to protect sensitive data (such as credit card numbers) that is transmitted via some type of communications
+		network. Encryption can be used to provide additional protection for sensitive portions of a database as well.
+
+	b. Compare and contrast information security and information privacy.
+		- Information security means the protection of information and information systems from unauthorized access, use, disclosure, disruption, 
+		modification, or destruction in order to provide confidentiality, integrity, and availability. 	
+		
+		- Information privacy is the relationship between the collection and dissemination of data, technology, the public expectation of privacy, 
+		and the legal and political issues surrounding them. Privacy concerns exist wherever personally identifiable information or other sensitive 
+		information is collected, stored, used, and finally destroyed or deleted – in digital form or otherwise. Improper or non-existent disclosure 
+		control can be the root cause for privacy issues.
+
+
+2) Read Imperva’s Top 5 Database Security Threats.
+	a. Name and explain the security threats discussed in the article.
+		1) Excessive, Inappropriate, and Unused Privileges
+			- The complexity of applications and the corresponding data structures used mean that administrators are inclined to grant excessive 
+			privileges by default just to avoid the risk of application failure due to lack of access privileges. Thus, users may be granted generic
+			or default access privileges that far exceed their specific job requirements, or they may simply accumulate such privileges over time. 
+			Usually, enterprises protect or “harden” the devices of employeesin high positions (like the CEO, CFO etc.) from external (and internal) 
+			attackers to protect the vast access to sensitive data these users require. This hardening facilitates the detection of a compromising 
+			situation, termination of access and potential destruction of locally stored data. However, this is not a scalable or viable solution in 
+			a BYOD world. When a device of an average user is compromised, it will likely be harder to detect, and if this user has excessive privileges
+ 			it can create a breach leading to a massive data loss incident. 
+
+		2) Privilege Abuse
+			- Imperva research that includes data from multiple organizations over a two-year period indicates that in every organization humans used 
+			database service accounts to access databases, and that these users were misusing these privileged service accounts to access sensitive data 
+			directly, bypassing the application interface.	In addition, certain “Privileged Users” may abuse legitimate database privileges for unauthorized 
+			purposes. Certain user groups in the organization have privileges to access entire databases due to their occupation and activities. The
+			two main categories of privileged users are database systems administrators and developers:
+				• Database systems administrators (DBAs) have unlimited access to all data in
+				the database. For the best security, DBAs should not access application data
+				in the database (applicative data/tables) directly when they are administrating
+				the database. When a DBA accesses the applicative data directly through the
+				database instead of the application interface, he bypasses the application
+				logging and retrieval limitations and avoids the application permissions and
+				security mechanism.
+
+				• Developers often have full access to production databases. The QA teams
+				snapshot the databases for testing while engineers may debug live production
+				systems. In both scenarios, sensitive data is vulnerable to privilege abuse.
+
+		3) Most organizations rely heavily on apps to interface with customers. There are many types of attacks on applications that can expose data. Two common types 
+		of web application attacks that target databases are SQL Injection and Web Shell. SQL Injection (SQLi) attacks have been a top threat on the Verizon DBIR report 
+		for multiple years. SQLi attacks are a result of incomplete or inadequate input validation that allows bad actors to pass SQL commands to the database via the 
+		web application in a manner that was never anticipated. 
+
+		4) Weak Audit Trail
+			-  Monitoring data access across the enterprise should be part of any production database deployment. The failure to monitor for both security and compliance 
+			anomalies and collect the appropriate audit details of database activity represents a serious organizational risk at many levels. Additionally, organizations 
+			with weak (or sometimes non-existent) database audit mechanisms also find that they are at odds with industry and government regulatory requirements. SarbanesOxley
+			(SOX), which seeks to prevent accounting errors and fraudulent practices, and the Healthcare Information Portability and Accountability Act (HIPAA) in the healthcare 
+			sector, are examples of regulations with clear database audit requirements. The newly introduced General Data Protection Regulation (GDPR) for the European Union (EU) 
+			is the first regulation that imposes debilitating fines for enterprise that fail to meet the stringent data protection measures that include a database monitoring capability 
+			sufficient to meet the audit and breach notification requirements for all personal data.
+
+		5)  Unsecured Storage Media
+			- When was the last time you pondered the vulnerability of your backup storage media? Typically, it’s completely unprotected. Numerous security breaches have involved the theft 
+			or incidental exposure of database backup disks and tapes. Taking the appropriate measures to protect backup copies of sensitive data is not only a data security best practice, 
+			but also mandated by many regulations. In addition, highly privileged users will often have direct physical access to the database servers. This physical proximately means they 
+			can insert thumb or USB drives and execute SQL commands directly to the database that will shut off native audit and bypass all protection mechanisms except those deployed at the 
+			kernel level of the database server. You want a robust database monitoring and protection tool that will not allow these types of breaches. 
