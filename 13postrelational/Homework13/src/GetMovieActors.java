@@ -21,11 +21,34 @@ public class GetMovieActors {
 
         System.out.println("Movie ID: " + movieId);
 
-        Key majorKeyPathOnly = Key.createKey(Arrays.asList("movie", movieId.toString()));
-        Map<Key, ValueVersion> fields = store.multiGet(majorKeyPathOnly, null, null);
+        //Key actorMovieKey = Key.createKey(Arrays.asList("actor", movieId.toString()));
+
+        Key key = Key.createKey(Arrays.asList("movie", movieId.toString()), Arrays.asList("actorInMovie"));
+        Map<Key, ValueVersion> fields = store.multiGet(key, null, null);
+
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
-            String temp = new String(field.getValue().getValue().getValue());
-            System.out.println("\t" + temp);
+            String actorId = field.getKey().getMinorPath().get(1);
+            String first="";
+            String last="";
+            Map<Key, ValueVersion> actor = store.multiGet(Key.createKey(Arrays.asList("actor", actorId)), null, null);
+            for (Map.Entry<Key, ValueVersion> field1 : actor.entrySet()){
+                if (field1.getKey().getMinorPath().get(0).equals("firstName")){
+                    first = new String(field.getValue().getValue().getValue());
+                }
+                if (field1.getKey().getMinorPath().get(0).equals("lastName")){
+                    last = new String(field.getValue().getValue().getValue());
+                }
+            }
+
+            String role = new String(field.getValue().getValue().getValue());
+            String cleanRole = role.substring(1, role.length()-1);
+
+            String[] array = cleanRole.split(",");
+
+            for (String actorRole: array){
+                System.out.println("\n" + actorId + "\t" + first + " " + last + "\t" + actorRole);
+            }
+
         }
 
         store.close();

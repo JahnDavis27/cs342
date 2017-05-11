@@ -35,18 +35,18 @@ public class LoadDB {
     public static void getMovies(KVStore store, Connection jdbcConnection) throws SQLException {
 
         Statement jdbcStatement = jdbcConnection.createStatement();
-        ResultSet resultSet = jdbcStatement.executeQuery("SELECT id, name, year, rank FROM Movie");
-        while (resultSet.next()) {
+        ResultSet movieSet = jdbcStatement.executeQuery("SELECT id, name, year, rank FROM Movie");
+        while (movieSet.next()) {
 
-            Integer movieId = resultSet.getInt(1);
-            String rank = resultSet.getString(4);
+            Integer movieId = movieSet.getInt(1);
+            String rank = movieSet.getString(4);
 
             Key nameKey = Key.createKey(Arrays.asList("movie", movieId.toString()), Arrays.asList("name"));
-            Value nameValue = Value.createValue(resultSet.getString(2).getBytes());
+            Value nameValue = Value.createValue(movieSet.getString(2).getBytes());
             store.put(nameKey, nameValue);
 
             Key yearKey = Key.createKey(Arrays.asList("movie", movieId.toString()), Arrays.asList("year"));
-            Value yearValue = Value.createValue(resultSet.getString(3).getBytes());
+            Value yearValue = Value.createValue(movieSet.getString(3).getBytes());
             store.put(yearKey, yearValue);
 
             Key rankKey = Key.createKey(Arrays.asList("movie", movieId.toString()), Arrays.asList("rank"));
@@ -57,28 +57,28 @@ public class LoadDB {
             store.put(rankKey, rankValue);
         }
 
-        resultSet.close();
+        movieSet.close();
         jdbcStatement.close();
     }
 
     public static void getActors(KVStore store, Connection jdbcConnection) throws SQLException {
 
         Statement jdbcStatement = jdbcConnection.createStatement();
-        ResultSet resultSet = jdbcStatement.executeQuery("SELECT id, firstName, lastName FROM Actor");
-        while (resultSet.next()) {
+        ResultSet actorSet = jdbcStatement.executeQuery("SELECT id, firstName, lastName FROM Actor");
+        while (actorSet.next()) {
 
-            Integer actorId = resultSet.getInt(1);
+            Integer actorId = actorSet.getInt(1);
 
             Key nameKey = Key.createKey(Arrays.asList("actor", actorId.toString()), Arrays.asList("firstName"));
-            Value nameValue = Value.createValue(resultSet.getString(2).getBytes());
+            Value nameValue = Value.createValue(actorSet.getString(2).getBytes());
             store.put(nameKey, nameValue);
 
             Key yearKey = Key.createKey(Arrays.asList("actor", actorId.toString()), Arrays.asList("lastName"));
-            Value yearValue = Value.createValue(resultSet.getString(3).getBytes());
+            Value yearValue = Value.createValue(actorSet.getString(3).getBytes());
             store.put(yearKey, yearValue);
         }
 
-        resultSet.close();
+        actorSet.close();
         jdbcStatement.close();
     }
 
