@@ -1,0 +1,27 @@
+notes.txt
+Jahn Davis
+May 12th, 2017
+CS342
+Keith Vander Linden
+Homework 13
+------------------------------------
+1) What type of noSQL database system is Oracle’s NoSQL product, KVLite?
+	- KVLite is a key-value type of noSQL database system.
+	
+2) The Internet Movie DataBase (imdb.com) is currently implemented in mySQL. If you were required to port it to a noSQL system, which of the noSQL system types 
+would you suggest? Explain your answer.
+	- I would use a document noSQL database design. Document databases provide a rich query language and constructs such as databases indexes that allow for an
+    easier transition from relational databases to the noSQL system. The documents don't all have to be exactly the same in format, which makes the moving data 
+	of movies (that might not have all the exact same type or amount of information for each movie) much easier. 
+	
+3) Could you (efficiently) reuse the same key-value structure for exercise 13.1.d (above) and its “opposite”, i.e., get the movies in which a given actor is cast? Why or why not?
+	- I believe that I would not be able to reuse this structure in order to get the movies in which a given actor is cast. I could probably implement this by simply switching 
+	the movieId and the actorId in the key structure so that it would would allow me to do the opposite query of 13.1.d.
+
+4) NoSQL databases are often referred to as schema-less or schema-free. Explain what this means using examples from your homework solution.
+	- A schema-less database does not require conformation to a rigid schema (database, schema, data types, tables etc.) that one is required to live up to through the life of a system.
+	An advantage of this approach is that a developer can store data in a manner for a specific kind of query that would be continuously run in the business setting. For example, the 
+	table is stored in an interesting fashion, but it simply is tailored to the needs of the assignment, and not really any strict form of normalization. Depending on the desired queries,
+	the data can be stored in a variety of ways.
+	
+	

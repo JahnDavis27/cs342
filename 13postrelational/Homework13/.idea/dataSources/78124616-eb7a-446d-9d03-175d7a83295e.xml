@@ -2,10 +2,10 @@
   <database-model serializer="dbm" rdbms="ORACLE" format-version="2.6">
     <schema id="1" name="IMDB">
       <object-id>48</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <visible>1</visible>
-      <introspection-timestamp>2017-05-11.11:52:12</introspection-timestamp>
+      <introspection-timestamp>2017-05-11.22:02:37</introspection-timestamp>
     </schema>
     <schema id="2" name="PUBLIC">
       <object-id>1</object-id>
@@ -62,179 +62,285 @@
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="20" parent="1" name="DIRECTOR">
+    <table id="20" parent="1" name="ACTOR">
+      <object-id>20063</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="21" parent="1" name="DIRECTOR">
       <object-id>20066</object-id>
       <created-timestamp>2017-05-11.11:51:15</created-timestamp>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="21" parent="1" name="DIRECTORGENRE">
-      <object-id>20070</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+    <table id="22" parent="1" name="DIRECTOR">
+      <object-id>20065</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="22" parent="1" name="GENRE">
+    <table id="23" parent="1" name="DIRECTORGENRE">
+      <object-id>20069</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="24" parent="1" name="GENRE">
       <object-id>20068</object-id>
       <created-timestamp>2017-05-11.11:51:15</created-timestamp>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="23" parent="1" name="MOVIE">
+    <table id="25" parent="1" name="GENRE">
+      <object-id>20067</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="26" parent="1" name="MOVIE">
+      <object-id>20070</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="27" parent="1" name="MOVIE">
       <object-id>20071</object-id>
       <created-timestamp>2017-05-11.11:51:15</created-timestamp>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="24" parent="1" name="MOVIEDIRECTOR">
+    <table id="28" parent="1" name="MOVIEDIRECTOR">
+      <object-id>20072</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="29" parent="1" name="MOVIEGENRE">
       <object-id>20073</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="25" parent="1" name="MOVIEGENRE">
+    <table id="30" parent="1" name="ROLE">
       <object-id>20074</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="26" parent="1" name="ROLE">
+    <table id="31" parent="1" name="ROLE">
       <object-id>20075</object-id>
       <created-timestamp>2017-05-11.11:51:15</created-timestamp>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <column id="27" parent="19" name="ID">
+    <column id="32" parent="19" name="ID">
       <mandatory>1</mandatory>
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="28" parent="19" name="FIRSTNAME">
+    <column id="33" parent="19" name="FIRSTNAME">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="29" parent="19" name="LASTNAME">
+    <column id="34" parent="19" name="LASTNAME">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="30" parent="19" name="GENDER">
+    <column id="35" parent="19" name="GENDER">
       <data-type>CHAR(1)|0</data-type>
     </column>
-    <index id="31" parent="19" name="SYS_C006997">
+    <index id="36" parent="19" name="SYS_C006997">
       <name-surrogate>1</name-surrogate>
-      <object-id>20065</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <object-id>20064</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>ID</columns>
       <desc-columns />
       <unique>1</unique>
       <tablespace-name>SYSTEM</tablespace-name>
     </index>
-    <key id="32" parent="19" name="SYS_C006997">
+    <key id="37" parent="19" name="SYS_C006997">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>ID</columns>
       <initially-deferred>1</initially-deferred>
       <underlying-index>SYS_C006997</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="33" parent="20" name="ID">
+    <column id="38" parent="20" name="ID">
       <mandatory>1</mandatory>
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="34" parent="20" name="FIRSTNAME">
+    <column id="39" parent="20" name="FIRSTNAME">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="35" parent="20" name="LASTNAME">
+    <column id="40" parent="20" name="LASTNAME">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <index id="36" parent="20" name="SYS_C006998">
+    <column id="41" parent="20" name="GENDER">
+      <data-type>CHAR(1)|0</data-type>
+    </column>
+    <column id="42" parent="21" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="43" parent="21" name="FIRSTNAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <column id="44" parent="21" name="LASTNAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <index id="45" parent="21" name="SYS_C006998">
       <name-surrogate>1</name-surrogate>
-      <object-id>20067</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <object-id>20066</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>ID</columns>
       <desc-columns />
       <unique>1</unique>
       <tablespace-name>SYSTEM</tablespace-name>
     </index>
-    <key id="37" parent="20" name="SYS_C006998">
+    <key id="46" parent="21" name="SYS_C006998">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>ID</columns>
       <initially-deferred>1</initially-deferred>
       <underlying-index>SYS_C006998</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="38" parent="21" name="DIRECTORID">
+    <column id="47" parent="22" name="ID">
+      <mandatory>1</mandatory>
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="39" parent="21" name="GENRE">
+    <column id="48" parent="22" name="FIRSTNAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <column id="49" parent="22" name="LASTNAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <column id="50" parent="23" name="DIRECTORID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="51" parent="23" name="GENRE">
       <data-type>VARCHAR2(20)|0</data-type>
     </column>
-    <column id="40" parent="21" name="PROBABILITY">
+    <column id="52" parent="23" name="PROBABILITY">
       <data-type>NUMBER(12,10)|0</data-type>
     </column>
-    <foreign-key id="41" parent="21" name="SYS_C007001">
+    <foreign-key id="53" parent="23" name="SYS_C007001">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>DIRECTORID</columns>
       <initially-deferred>1</initially-deferred>
       <ref-key>~.DIRECTOR.SYS_C006998</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="42" parent="21" name="SYS_C007002">
+    <foreign-key id="54" parent="23" name="SYS_C007002">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>GENRE</columns>
       <initially-deferred>1</initially-deferred>
       <ref-key>~.GENRE.SYS_C006999</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <check id="43" parent="21" name="SYS_C007000">
+    <check id="55" parent="23" name="SYS_C007000">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>PROBABILITY</columns>
       <predicate>(probability &gt;= 0.0) AND (probability &lt;= 1.0)</predicate>
     </check>
-    <column id="44" parent="22" name="GENRE">
+    <column id="56" parent="24" name="GENRE">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(20)|0</data-type>
     </column>
-    <index id="45" parent="22" name="SYS_C006999">
+    <index id="57" parent="24" name="SYS_C006999">
       <name-surrogate>1</name-surrogate>
-      <object-id>20069</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <object-id>20068</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>GENRE</columns>
       <desc-columns />
       <unique>1</unique>
       <tablespace-name>SYSTEM</tablespace-name>
     </index>
-    <key id="46" parent="22" name="SYS_C006999">
+    <key id="58" parent="24" name="SYS_C006999">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>GENRE</columns>
       <initially-deferred>1</initially-deferred>
       <underlying-index>SYS_C006999</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="47" parent="23" name="ID">
+    <column id="59" parent="25" name="GENRE">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR2(20)|0</data-type>
+    </column>
+    <column id="60" parent="26" name="ID">
       <mandatory>1</mandatory>
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="48" parent="23" name="NAME">
+    <column id="61" parent="26" name="NAME">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="49" parent="23" name="YEAR">
+    <column id="62" parent="26" name="YEAR">
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="50" parent="23" name="RANK">
+    <column id="63" parent="26" name="RANK">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="51" parent="23" name="SEQUELID">
+    <column id="64" parent="26" name="SEQUELID">
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <index id="52" parent="23" name="SYS_C007004">
+    <index id="65" parent="26" name="SYS_C007004">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20071</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="66" parent="26" name="SYS_C007004">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007004</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="67" parent="26" name="SYS_C007005">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <columns>SEQUELID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>SYS_C007004</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <check id="68" parent="26" name="SYS_C007003">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <columns>RANK</columns>
+      <predicate>rank &gt;= 0</predicate>
+    </check>
+    <column id="69" parent="27" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="70" parent="27" name="NAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <column id="71" parent="27" name="YEAR">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="72" parent="27" name="RANK">
+      <data-type>NUMBER(10,2)|0</data-type>
+    </column>
+    <column id="73" parent="27" name="SEQUELID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="74" parent="27" name="SYS_C007004">
       <name-surrogate>1</name-surrogate>
       <object-id>20072</object-id>
       <created-timestamp>2017-05-11.11:51:15</created-timestamp>
@@ -244,7 +350,7 @@
       <unique>1</unique>
       <tablespace-name>SYSTEM</tablespace-name>
     </index>
-    <key id="53" parent="23" name="SYS_C007004">
+    <key id="75" parent="27" name="SYS_C007004">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <columns>ID</columns>
@@ -252,7 +358,7 @@
       <underlying-index>SYS_C007004</underlying-index>
       <primary>1</primary>
     </key>
-    <foreign-key id="54" parent="23" name="SYS_C007005">
+    <foreign-key id="76" parent="27" name="SYS_C007005">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <columns>SEQUELID</columns>
@@ -261,77 +367,77 @@
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <check id="55" parent="23" name="SYS_C007003">
+    <check id="77" parent="27" name="SYS_C007003">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <columns>RANK</columns>
       <predicate>rank &gt;= 0</predicate>
     </check>
-    <column id="56" parent="24" name="DIRECTORID">
+    <column id="78" parent="28" name="DIRECTORID">
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="57" parent="24" name="MOVIEID">
+    <column id="79" parent="28" name="MOVIEID">
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <foreign-key id="58" parent="24" name="SYS_C007006">
+    <foreign-key id="80" parent="28" name="SYS_C007006">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>DIRECTORID</columns>
       <initially-deferred>1</initially-deferred>
       <ref-key>~.DIRECTOR.SYS_C006998</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="59" parent="24" name="SYS_C007007">
+    <foreign-key id="81" parent="28" name="SYS_C007007">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>MOVIEID</columns>
       <initially-deferred>1</initially-deferred>
       <ref-key>~.MOVIE.SYS_C007004</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="60" parent="25" name="MOVIEID">
+    <column id="82" parent="29" name="MOVIEID">
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="61" parent="25" name="GENRE">
+    <column id="83" parent="29" name="GENRE">
       <data-type>VARCHAR2(20)|0</data-type>
     </column>
-    <foreign-key id="62" parent="25" name="SYS_C007008">
+    <foreign-key id="84" parent="29" name="SYS_C007008">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>MOVIEID</columns>
       <initially-deferred>1</initially-deferred>
       <ref-key>~.MOVIE.SYS_C007004</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="63" parent="25" name="SYS_C007009">
+    <foreign-key id="85" parent="29" name="SYS_C007009">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>GENRE</columns>
       <initially-deferred>1</initially-deferred>
       <ref-key>~.GENRE.SYS_C006999</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="64" parent="26" name="ACTORID">
+    <column id="86" parent="30" name="MOVIEID">
       <mandatory>1</mandatory>
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="65" parent="26" name="MOVIEID">
+    <column id="87" parent="30" name="ACTORID">
       <mandatory>1</mandatory>
       <data-type>NUMBER(*)|0</data-type>
     </column>
-    <column id="66" parent="26" name="ROLE">
+    <column id="88" parent="30" name="ROLE">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <index id="67" parent="26" name="SYS_C007010">
+    <index id="89" parent="30" name="SYS_C007010">
       <name-surrogate>1</name-surrogate>
-      <object-id>20076</object-id>
-      <created-timestamp>2017-05-11.11:51:15</created-timestamp>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <object-id>20075</object-id>
+      <created-timestamp>2017-05-11.22:01:35</created-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>ACTORID
 MOVIEID
 ROLE</columns>
@@ -339,9 +445,9 @@ ROLE</columns>
       <unique>1</unique>
       <tablespace-name>SYSTEM</tablespace-name>
     </index>
-    <key id="68" parent="26" name="SYS_C007010">
+    <key id="90" parent="30" name="SYS_C007010">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
       <columns>ACTORID
 MOVIEID
 ROLE</columns>
@@ -349,7 +455,46 @@ ROLE</columns>
       <underlying-index>SYS_C007010</underlying-index>
       <primary>1</primary>
     </key>
-    <foreign-key id="69" parent="26" name="SYS_C007011">
+    <foreign-key id="91" parent="30" name="SYS_C007011">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <columns>ACTORID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ACTOR.SYS_C006997</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="92" parent="30" name="SYS_C007012">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-11.22:01:35</modified-timestamp>
+      <columns>MOVIEID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.MOVIE.SYS_C007004</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="93" parent="31" name="ACTORID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="94" parent="31" name="MOVIEID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="95" parent="31" name="ROLE">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <key id="96" parent="31" name="SYS_C007010">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
+      <columns>ACTORID
+MOVIEID
+ROLE</columns>
+      <initially-deferred>1</initially-deferred>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="97" parent="31" name="SYS_C007011">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <columns>ACTORID</columns>
@@ -358,7 +503,7 @@ ROLE</columns>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="70" parent="26" name="SYS_C007012">
+    <foreign-key id="98" parent="31" name="SYS_C007012">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-05-11.11:51:15</modified-timestamp>
       <columns>MOVIEID</columns>
