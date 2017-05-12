@@ -3,6 +3,12 @@
     <output-path>$PROJECT_DIR$/out/artifacts/j2ee_war</output-path>
     <root id="archive" name="j2ee_war.war">
       <element id="artifact" artifact-name="j2ee:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JPA 2.1-2.1" />
+          <element id="library" level="project" name="Jersey-2.2" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

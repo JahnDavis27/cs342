@@ -3,10 +3,11 @@
 --------------------------------------------
 
 -- Drop the previous table declarations.
-@drop         
+@&jrd58\drop         
 
 -- Reload the table declarations.
-@schema
-
+@&jrd58\schema
+commit;
 -- Load the table data.
-@data
+@&jrd58\data
+commit;

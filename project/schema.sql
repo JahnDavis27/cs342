@@ -16,7 +16,9 @@ CREATE TABLE Team(
 	name varchar(50),
 	homeCity varchar(30),
 	homeState varchar(30), 
-	conference varchar(4)
+	conference varchar(4),
+	wins integer,
+	losses integer
 	);
 	
 CREATE TABLE Player(

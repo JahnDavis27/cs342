@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Jahn3423Music
-  Date: 5/8/2017
-  Time: 2:48 PM
+  User: jrd58
+  Date: 5/10/2017
+  Time: 5:02 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  Hello, welcome to the statistics page for basketball.
+  $END$
   </body>
 </html>

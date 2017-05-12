@@ -9,22 +9,22 @@ INSERT INTO Position VALUES(4, 'PF');
 INSERT INTO Position VALUES(5, 'C');
 
 --Added Warriors and Cavaliers teams to database
-INSERT INTO Team VALUES (1, 'Golden State Warriors', 'San Francisco', 'California', 'West');
-INSERT INTO Team VALUES (2, 'Cleveland Cavaliers', 'Cleveland', 'Ohio', 'East');
-INSERT INTO Team VALUES (3, 'San Antonio Spurs', 'San Antonio', 'Texas', 'West');
-INSERT INTO Team VALUES (4, 'Atlanta Hawks', 'Atlanta', 'Georgia', 'East');
-INSERT INTO Team VALUES (5, 'Oklahoma City Thunder', 'Oklahoma City', 'Oklahoma', 'West');
-INSERT INTO Team VALUES (6, 'Toronto Raptors', 'Toronto', 'Canada', 'East');
-INSERT INTO Team VALUES (7, 'Houston Rockets', 'Houston', 'Texas', 'West');
-INSERT INTO Team VALUES (8, 'Portland Trailblazers', 'Portland', 'Oregon', 'West');
-INSERT INTO Team VALUES (9, 'Boston Celtics', 'Boston', 'Massachusetts', 'East');
-INSERT INTO Team VALUES (10, 'Charlotte Hornets', 'Charlotte', 'North Carolina', 'East');
-INSERT INTO Team VALUES (11, 'Dallas Mavericks', 'Dallas', 'Texas', 'West');
-INSERT INTO Team VALUES (12, 'Los Angeles Clippers', 'Los Angeles', 'California', 'West');
-INSERT INTO Team VALUES (13, 'Miami Heat', 'Miami', 'Florida', 'East');
-INSERT INTO Team VALUES (14, 'Detroit Pistons', 'Detroit', 'Michigan', 'East');
-INSERT INTO Team VALUES (15, 'Memphis Grizzlies', 'Memphis', 'Tennessee', 'West');
-INSERT INTO Team VALUES (16, 'Indiana Pacers', 'Indianapolis', 'Indiana', 'East');
+INSERT INTO Team VALUES (1, 'Golden State Warriors', 'San Francisco', 'California', 'West', 73, 9);
+INSERT INTO Team VALUES (2, 'Cleveland Cavaliers', 'Cleveland', 'Ohio', 'East', 57, 25);
+INSERT INTO Team VALUES (3, 'San Antonio Spurs', 'San Antonio', 'Texas', 'West', 67, 15);
+INSERT INTO Team VALUES (4, 'Atlanta Hawks', 'Atlanta', 'Georgia', 'East', 48, 34);
+INSERT INTO Team VALUES (5, 'Oklahoma City Thunder', 'Oklahoma City', 'Oklahoma', 'West', 55, 27);
+INSERT INTO Team VALUES (6, 'Toronto Raptors', 'Toronto', 'Canada', 'East', 56, 26);
+INSERT INTO Team VALUES (7, 'Houston Rockets', 'Houston', 'Texas', 'West', 41, 41);
+INSERT INTO Team VALUES (8, 'Portland Trailblazers', 'Portland', 'Oregon', 'West', 44, 38);
+INSERT INTO Team VALUES (9, 'Boston Celtics', 'Boston', 'Massachusetts', 'East', 48, 34);
+INSERT INTO Team VALUES (10, 'Charlotte Hornets', 'Charlotte', 'North Carolina', 'East', 48, 34);
+INSERT INTO Team VALUES (11, 'Dallas Mavericks', 'Dallas', 'Texas', 'West', 42, 40);
+INSERT INTO Team VALUES (12, 'Los Angeles Clippers', 'Los Angeles', 'California', 'West', 53, 29);
+INSERT INTO Team VALUES (13, 'Miami Heat', 'Miami', 'Florida', 'East', 48, 34);
+INSERT INTO Team VALUES (14, 'Detroit Pistons', 'Detroit', 'Michigan', 'East', 44, 38);
+INSERT INTO Team VALUES (15, 'Memphis Grizzlies', 'Memphis', 'Tennessee', 'West', 42, 40);
+INSERT INTO Team VALUES (16, 'Indiana Pacers', 'Indianapolis', 'Indiana', 'East', 45, 37);
 
 --Inserting starting players from both teams into the database
 INSERT INTO Player VALUES(1, 'Stephen', 'Curry', 75.0, 190, 1, 12112359);
