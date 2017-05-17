@@ -24,12 +24,11 @@ GROUP BY P.salary ;
 
 --This query returns all the points, assists, and rebounds from each game for a player during a certain season, as well the details of the game the triple double occured.
 -- This query would be useful for people trying to gather the complete statistics on a player's season cumulatively. 
-SELECT DISTINCT P.firstName, P.lastName, G.gameDate, G.cityPlayedIn, T.name, GS.points, GS.assists, GS.rebounds FROM Player P, Games G, GameStats GS, Team T
+SELECT DISTINCT P.firstName, P.lastName, GS.points, GS.assists, GS.rebounds FROM Player P, GameStats GS
 WHERE GS.points >= 10
 AND GS.assists >= 10
 AND GS.rebounds >= 10
-AND P.ID = GS.playerID
-AND GS.gameID = G.ID;
+AND P.ID = GS.playerID;
 
 
 --This query lists all players and their salaries for the 2016-17 season in order from largest to smallest. 
