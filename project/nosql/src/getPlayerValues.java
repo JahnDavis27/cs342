@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 /**
  * Gets the values associated with a player based upon a user-inputted ID number.
+ * Refer to basketballStats.java to see the key-value structure being used.
  * Created by jrd58 on 5/12/2017.
  */
 public class getPlayerValues {

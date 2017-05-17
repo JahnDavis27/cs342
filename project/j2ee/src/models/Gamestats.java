@@ -3,6 +3,8 @@ package models;
 import javax.persistence.*;
 
 /**
+ * Gets all the data and columns for the GameStats table in the NBA database.
+ * Uses the Oracle database source.
  * Created by jrd58 on 5/12/2017.
  */
 @Entity

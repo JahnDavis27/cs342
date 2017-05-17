@@ -7,6 +7,7 @@ import java.util.*;
 /**
  * Sorts the teams in the database based upon the number of wins they recorded
  *      during the 2015-16  NBA regular season.
+ * Refer to basketballStats.java to see the key-value structure being used.
  * Created by jrd58 on 5/12/2017.
  */
 public class getSortedTeams {
@@ -47,10 +48,10 @@ public class getSortedTeams {
          */
         for (Integer win : ints) {
             for (List<String> teamInfo : teams.get(win.toString())) {
-                System.out.print(win + "\t");
                 for (String data : teamInfo) {
                     System.out.print(data + "\t");
                 }
+                System.out.print("\t" + win + " wins");
                 System.out.print("\n");
             }
         }
@@ -58,7 +59,11 @@ public class getSortedTeams {
         store.close();
     }
 
-    // Gets the name of a team from their id
+    /**
+     * Gets the name of a team from their id
+     * @param(String teamId, KVStore store)
+     * Returns team ID and name
+     */
     public static String getNameOfTeam(String teamId, KVStore store) {
         String temp = "";
         Key majorKeyPath = Key.createKey(Arrays.asList("team", teamId));

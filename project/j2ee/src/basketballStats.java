@@ -1,13 +1,9 @@
-import javafx.geometry.Pos;
 import models.*;
-
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
-import javax.ws.rs.container.PreMatching;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -23,6 +19,9 @@ import java.util.List;
  *      up through this RESTful web service.
  */
 
+/**Class designed to execute GET, PUT, POST, and DELETE for the NBA database.
+ *Designed to carry out all commands for data that is formatted as JSON data.
+ */
 @Stateless
 @Path("ballStats")
 public class basketballStats {
@@ -37,7 +36,11 @@ public class basketballStats {
         return "Welcome to the statistics database for the 2016 NBA Playoffs!";
     }
 
-    //Get a specific player from the database
+    /**
+     * Gets a specific player in the database.
+     * @param id
+     * @return
+     */
     @GET
     @Path("player/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,7 +48,10 @@ public class basketballStats {
         return em.find(Player.class, id);
     }
 
-    //Get all the players from the database
+    /**
+     * Gets all the players in the database.
+     * @return
+     */
     @GET
     @Path("players")
     @Produces(MediaType.APPLICATION_JSON)
@@ -53,7 +59,11 @@ public class basketballStats {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Player.class)).getResultList();
     }
 
-    //Get a specific team from the database
+    /**
+     * Gets a specific team in the database.
+     * @param id
+     * @return
+     */
     @GET
     @Path("team/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -61,7 +71,10 @@ public class basketballStats {
         return em.find(Team.class, id);
     }
 
-    //Get all the teams from the database
+    /**
+     * Gets all teams in the database.
+     * @return
+     */
     @GET
     @Path("teams")
     @Produces(MediaType.APPLICATION_JSON)
@@ -69,7 +82,11 @@ public class basketballStats {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Team.class)).getResultList();
     }
 
-    //Get a specific game from the database
+    /**
+     * Gets a specific game in the database.
+     * @param id
+     * @return
+     */
     @GET
     @Path("game/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -77,7 +94,10 @@ public class basketballStats {
         return em.find(Games.class, id);
     }
 
-    //Get all games in the database
+    /**
+     * Gets all games in the database.
+     * @return
+     */
     @GET
     @Path("games")
     @Produces(MediaType.APPLICATION_JSON)
@@ -85,7 +105,11 @@ public class basketballStats {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Games.class)).getResultList();
     }
 
-    //Get a specific statistics record for a single game
+    /**
+     * Gets the specific statistical data for a certain performance/gameStats in the database.
+     * @param id
+     * @return
+     */
     @GET
     @Path("gamestats/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -93,7 +117,10 @@ public class basketballStats {
         return em.find(Gamestats.class, id);
     }
 
-    //Get all the game statistics in the database
+    /**
+     * Gets all the data for GameStats from the database.
+     * @return
+     */
     @GET
     @Path("gamestats")
     @Produces(MediaType.APPLICATION_JSON)
@@ -101,7 +128,11 @@ public class basketballStats {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Gamestats.class)).getResultList();
     }
 
-    //Get a specific season in the database
+    /**
+     * Gets data for a specific season in the database.
+     * @param id
+     * @return
+     */
     @GET
     @Path("season/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -109,7 +140,10 @@ public class basketballStats {
         return em.find(Season.class, id);
     }
 
-    //Get all seasons in the database
+    /**
+     * Get all seasons in the database.
+     * @return
+     */
     @GET
     @Path("seasons")
     @Produces(MediaType.APPLICATION_JSON)
@@ -117,7 +151,11 @@ public class basketballStats {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Season.class)).getResultList();
     }
 
-    //Get a specific position in the database
+    /**
+     * Gets data for a specific position in the database.
+     * @param id
+     * @return
+     */
     @GET
     @Path("position/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -125,7 +163,10 @@ public class basketballStats {
         return em.find(Position.class,id);
     }
 
-    //Get all positions in the database
+    /**
+     * Gets all position data from the database.
+     * @return
+     */
     @GET
     @Path("positions")
     @Produces(MediaType.APPLICATION_JSON)
@@ -135,7 +176,11 @@ public class basketballStats {
 
     /*****************************POST section of HTTP requests******************************************/
 
-    // Add a new athlete to the database
+    /**
+     * Posts Player data.
+     * @param player
+     * @return
+     */
     @POST
     @Path("players")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -152,7 +197,11 @@ public class basketballStats {
         return newPlayer;
     }
 
-    // Add a new team to the database
+    /**
+     * Posts team data.
+     * @param team
+     * @return
+     */
     @POST
     @Path("teams")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -168,7 +217,11 @@ public class basketballStats {
         return team;
     }
 
-    //Add a new game to the database
+    /**
+     * Posts game data.
+     * @param game
+     * @return
+     */
     @POST
     @Path("games")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -185,6 +238,11 @@ public class basketballStats {
         return game;
     }
 
+    /**
+     * Posts a new gameStats record to the database.
+     * @param gameStat
+     * @return
+     */
     @POST
     @Path("gamestats")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -210,7 +268,11 @@ public class basketballStats {
         return gameStat;
     }
 
-    //Add a new season to the database
+    /**
+     * Posts a new Season record to the database.
+     * @param season
+     * @return
+     */
     @POST
     @Path("seasons")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -224,7 +286,11 @@ public class basketballStats {
         return season;
     }
 
-    //Add a new position to the database
+    /**
+     * Posts a new position to the database.
+     * @param position
+     * @return
+     */
     @POST
     @Path("positions")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -238,9 +304,14 @@ public class basketballStats {
     }
 
     /**********************************PUT section of the HTTP requests**************************************/
-    // Modify an existing athlete in the database
+    /**
+     * Modifies a specific player in the database.
+     * @param id
+     * @param player
+     * @return
+     */
     @PUT
-    @Path("athlete/{id}")
+    @Path("player/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Player putPlayer(@PathParam("id") long id, Player player) {
@@ -251,7 +322,12 @@ public class basketballStats {
         return player;
     }
 
-    // Modify an existing team in the database
+    /**
+     * Modifies a specific team in the database.
+     * @param id
+     * @param team
+     * @return
+     */
     @PUT
     @Path("team/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -264,7 +340,12 @@ public class basketballStats {
         return team;
     }
 
-    //Modify an existing game in the database
+    /**
+     * Modifies a specific game in the database.
+     * @param id
+     * @param game
+     * @return
+     */
     @PUT
     @Path("game/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -277,7 +358,12 @@ public class basketballStats {
         return game;
     }
 
-    //Modify an existing season in the database
+    /**
+     * Modifies a specific season in the database.
+     * @param id
+     * @param season
+     * @return
+     */
     @PUT
     @Path("season/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -290,7 +376,12 @@ public class basketballStats {
         return season;
     }
 
-    //Modify an existing gameStats record in the database
+    /**
+     * Modifies a specific performance/GameStats in the database.
+     * @param id
+     * @param gameStats
+     * @return
+     */
     @PUT
     @Path("gamestats/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -303,7 +394,12 @@ public class basketballStats {
         return gameStats;
     }
 
-    //Modify an existing position in the database
+    /**
+     * Modifies a specific position in the database.
+     * @param id
+     * @param position
+     * @return
+     */
     @PUT
     @Path("position/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -317,7 +413,12 @@ public class basketballStats {
     }
 
     /*********************************DELETE section of HTTP requests************************************/
-    // Remove a player from the database
+    /**
+     *
+     * Deletes a specific player from the database.
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("player/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -329,7 +430,11 @@ public class basketballStats {
         return player;
     }
 
-    //Remove a team from the database
+    /**
+     * Deletes a specific team from the database.
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("team/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -341,7 +446,11 @@ public class basketballStats {
         return team;
     }
 
-    //Remove a season from the database
+    /**
+     * Removes a specific season from the database.
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("season/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -353,7 +462,11 @@ public class basketballStats {
         return season;
     }
 
-    //Remove a game from the database
+    /**
+     * Removes a specific game from the database.
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("games/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -365,7 +478,11 @@ public class basketballStats {
         return game;
     }
 
-    //Remove a gameStats record from the database
+    /**
+     * Removes a specific performance/GameStats from the database.
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("gamestats/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -377,7 +494,11 @@ public class basketballStats {
         return gameStats;
     }
 
-    //Remove a position from the database
+    /**
+     * Removes a specific position from the database.
+     * @param id
+     * @return
+     */
     @DELETE
     @Path("position/{id}")
     @Produces(MediaType.APPLICATION_JSON)

@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.sql.Time;
 
 /**
+ * Grabs all the data on Games from the NBA database.
+ * Uses the Oracle database source.
  * Created by jrd58 on 5/12/2017.
  */
 @Entity

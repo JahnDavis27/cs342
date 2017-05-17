@@ -1,4 +1,5 @@
 /**
+ * Gets the basketballStats class and adds it to the HashSet.
  * Created by jrd58 on 5/11/2017.
  */
 import javax.ws.rs.ApplicationPath;

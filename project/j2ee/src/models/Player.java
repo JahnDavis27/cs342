@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
+ * Gets all the data for the Player table from the NBA database.
+ * Uses the Oracle database source.
  * Created by jrd58 on 5/12/2017.
  */
 @Entity

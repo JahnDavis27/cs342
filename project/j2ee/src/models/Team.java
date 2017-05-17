@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
+ * Class that defines the model for Teams in the database.
+ * Grabs all of the data from Oracle database source.
  * Created by jrd58 on 5/12/2017.
  */
 @Entity

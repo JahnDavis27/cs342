@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
+ * Gets the roster on an entire team, including all players that are listed on the user inputted team
+ *  in the database.
+ *  Refer to basketballStats.java to see the key-value structure being used.
  * Created by jrd58 on 5/12/2017.
  */
 public class getPlayerTeams {

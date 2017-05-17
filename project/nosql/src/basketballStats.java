@@ -7,6 +7,8 @@ import oracle.kv.*;
 import java.sql.*;
 import java.util.Arrays;
 
+
+
 public class basketballStats {
 
     private static KVStore store;
@@ -27,6 +29,13 @@ public class basketballStats {
 
     }
 
+    /**
+     * Populates the keys and values of the players in the NBA database.
+     * Grabs all player attributes and organizes them in an orderly format.
+     * An SQL exception is thrown if no data is found.
+     * @param: none
+     * @throws SQLException
+     **/
     public static void getPlayers() throws SQLException {
 
         Statement jdbcStatement = jdbcConnection.createStatement();
@@ -63,6 +72,13 @@ public class basketballStats {
         jdbcStatement.close();
     }
 
+    /**
+     * Populates the keys and values of the teams in the NBA database.
+     * Grabs all player attributes and organizes them in an orderly format.
+     * An SQL exception is thrown if no data is found.
+     * @param: none
+     * @throws SQLException
+     **/
     public static void getTeams() throws SQLException {
 
         Statement jdbcStatement = jdbcConnection.createStatement();
@@ -100,6 +116,13 @@ public class basketballStats {
 
     }
 
+    /**
+     * Populates the keys and values of the team rosters in the NBA database.
+     * Grabs all player attributes and organizes them in an orderly format.
+     * An SQL exception is thrown if no data is found.
+     * @param: none
+     * @throws SQLException
+     **/
     public static void getPlayerTeam() throws SQLException {
 
         Statement jdbcStatement = jdbcConnection.createStatement();

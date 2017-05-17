@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
+ * Gets all the data and columns for the PlayerTeam table in the NBA database.
+ * Uses the Oracle database source.
  * Created by jrd58 on 5/12/2017.
  */
 public class PlayerteamPK implements Serializable{

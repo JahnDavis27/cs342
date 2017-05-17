@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
+ * Gets all the data and columns for the Position table in the NBA database.
+ * Uses the Oracle database source.
  * Created by jrd58 on 5/12/2017.
  */
 @Entity
