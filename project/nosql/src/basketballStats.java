@@ -7,8 +7,10 @@ import oracle.kv.*;
 import java.sql.*;
 import java.util.Arrays;
 
-
-
+/**This class defines three methods for getting the keys and values from the Oracle database for my project.
+ * These methods populate keys and values which can then be used for the other java programs in this noSQL 
+ *     implementation.
+ */
 public class basketballStats {
 
     private static KVStore store;
