@@ -25,6 +25,14 @@ CREATE OR REPLACE PROCEDURE tradePlayers (teamOneID IN INTEGER, playerOneID IN I
 	counter INTEGER;
 BEGIN
 	
+	--Creates savepoint for potential rollbacks
+	SAVEPOINT temp;
+	
+	--Locks tables in case an edit happens
+	LOCK TABLE PlayerTeam IN EXCLUSIVE MODE NOWAIT;
+	LOCK TABLE Player IN EXCLUSIVE MODE NOWAIT;
+	LOCK TABLE Team IN EXCLUSIVE MODE NOWAIT;
+	
 	--Checks to see if the two players and teams exist in the database
 	SELECT COUNT(*) INTO playerOne FROM Player WHERE ID = playerOneID;
 	SELECT COUNT(*) INTO playerTwo FROM Player WHERE ID = playerTwoID;
@@ -50,13 +58,13 @@ BEGIN
 		--Check if the player is actually on their team
 		SELECT COUNT(*) INTO counter FROM PlayerTeam WHERE teamID = teamOneID AND playerID = playerOneID;
 		IF counter = 0 THEN
-			RAISE_APPLICATION_ERROR(-20000, 'Player' || playerOneID || 'is not on team' || teamOneID);
+			notOnTeamOneException;
 		END IF;
 		
 		-- Check if the second player is on their team
 		SELECT COUNT(*) INTO counter FROM PlayerTeam WHERE teamID = teamTwoID AND playerID = playerTwoID;
 		IF counter = 0 THEN
-			RAISE_APPLICATION_ERROR(-20000, 'Player' || playerTwoID || 'is not on team' || teamTwoID);
+			notOnTeamTwoException;
 		END IF;
 		
 		--Execute the trade between the two teams
@@ -68,6 +76,28 @@ BEGIN
 		INSERT INTO PlayerTEam VALUES(playerTwoID, teamTwoID);
 		
 	END IF;
+	COMMIT;
+	
+	EXCEPTION
+		
+		--When player not on team one
+		WHEN notOnTeamOneException
+			RAISE_APPLICATION_ERROR(-20000, 'Player' || playerOneID || 'is not on team' || teamOneID);
+			--Rollback to temp
+			ROLLBACK TO temp;
+	
+		--When player not on team two
+		WHEN notOnTeamTwoException
+			RAISE_APPLICATION_ERROR(-20000, 'Player' || playerTwoID || 'is not on team' || teamTwoID);
+			--Rollback to temp
+			ROLLBACK TO temp;
+				
+		--Any other errors		
+		WHEN OTHERS THEN
+			dbms_output.put_line("Unknown error. Rolling back to last savepoint");
+			--Rollback to temp
+			ROLLBACK TO temp;
+		
 END;
 /
 SHOW ERRORS;

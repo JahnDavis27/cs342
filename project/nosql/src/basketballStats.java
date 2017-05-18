@@ -32,6 +32,14 @@ public class basketballStats {
     }
 
     /**
+	 * getPlayers has the following key-value structure for storing players:
+     *      /player/{playerId}/-/firstName/{firstName}
+     *      /player/{playerId}/-/lastName/{lastName}
+     *      /player/{playerId}/-/heightInches/{heightInches}
+     *      /player/{playerId}/-/weightLbs/{weightLbs}
+     *      /player/{playerId}/-/position/{position}
+	 *		/player/{playerId}/-/salary/{salary}
+	 *
      * Populates the keys and values of the players in the NBA database.
      * Grabs all player attributes and organizes them in an orderly format.
      * An SQL exception is thrown if no data is found.
@@ -75,6 +83,14 @@ public class basketballStats {
     }
 
     /**
+	* getTeams has the following the key-value structure for storing fantasy teams:
+     *      /team/{teamId}/-/name/{name}
+	 *		/team/{teamId}/-/homeCity/{homeCity}
+	 *		/team/{teamId}/-/homeState/{homeState}
+	 *		/team/{teamId}/-/conference/{conference}
+     *      /team/{teamId}/-/wins/{wins}
+     *      /team/{teamId}/-/losses/{losses}
+     * 
      * Populates the keys and values of the teams in the NBA database.
      * Grabs all player attributes and organizes them in an orderly format.
      * An SQL exception is thrown if no data is found.
@@ -119,6 +135,9 @@ public class basketballStats {
     }
 
     /**
+	 * getPlayerTeam has the following key-value structure for storing the player_Team records
+     *      /playerTeam/{teamId}/{playerId}/-/NO-VALUE
+	 *
      * Populates the keys and values of the team rosters in the NBA database.
      * Grabs all player attributes and organizes them in an orderly format.
      * An SQL exception is thrown if no data is found.
