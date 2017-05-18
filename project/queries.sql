@@ -27,7 +27,7 @@ GROUP BY P.salary;
 
 
 
---This query returns all the points, assists, and rebounds from each game for a player during a certain season, as well the details of the game the triple double occured.
+--This query returns all the points, assists, and rebounds from each triple-double for a player during a certain season, as well the details of the game the triple double occured.
 -- This query would be useful for people trying to gather the complete statistics on a player's season cumulatively. 
 SELECT DISTINCT P.firstName, P.lastName, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, GameStats GS
 WHERE GS.points >= 10
