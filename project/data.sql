@@ -123,6 +123,9 @@ INSERT INTO Player VALUES(78, 'Paul', 'George', 81.0, 220, 3, 18314532);
 INSERT INTO Player VALUES(79, 'Lavoy', 'Allen', 81.0, 260, 4, 4000000);
 INSERT INTO Player VALUES(80, 'Ian', 'Mahinmi', 83.0, 250, 5, 15944154);
 
+INSERT INTO Player VALUES(81, 'Deron', 'Williams', 75.0, 200, 1, 410733);
+INSERT INTO Player VALUES(82, 'JaVale', 'McGee', 84.0, 270, 5, 1404000);
+
 --Defines the members of a team in the PlayerTeam table for all 16 teams in the database
 INSERT INTO PlayerTeam VALUES(1, 1);
 INSERT INTO PlayerTeam VALUES(2, 1);
