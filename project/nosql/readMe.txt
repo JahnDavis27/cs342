@@ -37,7 +37,5 @@ This key-value structure will allow me to get the necessary information needed f
 	  
 /*****************PLAYERTEAM TABLE***********************/
 getPlayerTeam has the following key-value structure for storing the PlayerTeam records
-      /playerTeam/{teamId}/-/player/{playerId}
- This key-value structure is not working quite yet. I cannot get the GetPlayerTeam to show all of the athletes
-      on a given team. My estimation is that it has to do with the storing of these records. I will meet with you to discuss this issue and fix it up by the final project 
-	  due date.
+      /playerTeam/{teamId}/{playerId}/-/NO-VALUE
+ This key-value structure allows me to get the players that are on a team given the team id. 
