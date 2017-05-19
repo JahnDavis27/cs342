@@ -1,10 +1,10 @@
 Query:
-SELECT  P.firstName, P.lastName, G.gameDate, G.cityPlayedIn, T.name, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, Games G, GameStats GS, Team T
+SELECT  P.firstName, P.lastName, G.gameDate, G.cityPlayedIn, T.name, GS.points, GS.assists, GS.rebounds, GS.steals, GS.blocks FROM Player P, Games G, GameStats GS, Team T, PlayerTeam PT
 WHERE GS.points >= 10
 AND GS.assists >= 10
 AND GS.rebounds >= 10
 AND P.ID = GS.playerID
-AND P.teamID = T.ID
+AND PT.teamID = T.ID
 AND GS.gameID = G.ID;
 
 ***********************Execution Plan**********************************
@@ -73,7 +73,7 @@ Predicate Information (identified by operation id):
 
    5 - filter("GS"."POINTS">=10 AND "GS"."ASSISTS">=10 AND "GS"."REBOUNDS">=10)
    7 - access("P"."ID"="GS"."PLAYERID")
-   9 - access("P"."TEAMID"="T"."ID")
+   9 - access("PLAYERTEAM"."TEAMID"="T"."ID")
   10 - access("GS"."GAMEID"="G"."ID")
 
 Note
